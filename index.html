@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubrí Uruguay - Fiesta de la Tradición</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --blanco: #ffffff;
+            --celeste: #4189DD;
+            --celeste-claro: #6CAEF5;
+            --celeste-oscuro: #2A5F9E;
+            --dorado: #FFD700;
+            --dorado-oscuro: #E6C200;
+            --dorado-suave: #FFF9C4;
+            --gris: #f8f9fa;
+            --gris-oscuro: #2c3e50;
+            --sombra: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --sombra-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: var(--gris-oscuro);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e3e8f0 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Header mejorado */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--celeste);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--dorado);
+            font-size: 2rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gris-oscuro);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--celeste);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--celeste), var(--dorado));
+            transition: width 0.4s ease;
+            border-radius: 10px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--celeste);
+        }
+
+        /* Hero Section espectacular */
+        .hero {
+            height: 100vh;
+            background: 
+                linear-gradient(135deg, rgba(65, 137, 221, 0.3) 0%, rgba(255, 215, 0, 0.2) 100%),
+                url('https://images.unsplash.com/photo-1595877244574-e90ce41ce089?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--blanco);
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(42, 95, 158, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--blanco), var(--dorado-suave));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--dorado), var(--dorado-oscuro));
+            color: var(--gris-oscuro);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Secciones mejoradas */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: var(--celeste-oscuro);
+            display: inline-block;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--celeste), var(--dorado));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+
+        /* Lugares Turísticos mejorados */
+        .lugares-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .lugar-card {
+            background-color: var(--blanco);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .lugar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(65, 137, 221, 0.1), rgba(255, 215, 0, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .lugar-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .lugar-card:hover::before {
+            opacity: 1;
+        }
+
+        .lugar-img {
+            height: 250px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s ease;
+        }
+
+        .lugar-card:hover .lugar-img {
+            transform: scale(1.1);
+        }
+
+        .lugar-content {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .lugar-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--celeste-oscuro);
+            font-weight: 700;
+        }
+
+        .lugar-content p {
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* Cultura mejorada */
+        .cultura {
+            background: linear-gradient(135deg, var(--gris) 0%, #e8ecf1 100%);
+            position: relative;
+        }
+
+        .cultura::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.03"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%234189DD"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .cultura-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cultura-text p {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        .cultura-icons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .cultura-icon {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--blanco);
+            border-radius: 15px;
+            box-shadow: var(--sombra);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cultura-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--celeste), var(--dorado));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .cultura-icon:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .cultura-icon:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cultura-icon i {
+            font-size: 3rem;
+            color: var(--celeste);
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .cultura-icon:hover i {
+            transform: scale(1.2);
+            color: var(--dorado);
+        }
+
+        .cultura-icon h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--celeste-oscuro);
+            font-weight: 700;
+        }
+
+        .cultura-icon p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Mapa mejorado */
+        .mapa-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--sombra-hover);
+            height: 500px;
+            position: relative;
+        }
+
+        .mapa-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(65, 137, 221, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .mapa-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Curiosidades mejoradas */
+        .curiosidades {
+            background: linear-gradient(135deg, #e8ecf1 0%, var(--gris) 100%);
+            position: relative;
+        }
+
+        .curiosidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .curiosidad-card {
+            background-color: var(--blanco);
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: var(--sombra);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .curiosidad-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(65, 137, 221, 0.05) 0%, rgba(255, 215, 0, 0.03) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .curiosidad-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .curiosidad-card:hover::before {
+            opacity: 1;
+        }
+
+        .curiosidad-card i {
+            font-size: 3.5rem;
+            color: var(--dorado);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .curiosidad-card:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .curiosidad-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--celeste-oscuro);
+            font-weight: 700;
+        }
+
+        .curiosidad-card p {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Footer mejorado */
+        footer {
+            background: linear-gradient(135deg, var(--gris-oscuro) 0%, #1a2530 100%);
+            color: var(--blanco);
+            padding: 60px 0 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--celeste), var(--dorado));
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .footer-logo i {
+            color: var(--dorado);
+            font-size: 2.2rem;
+        }
+
+        .creditos {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #aaa;
+            max-width: 600px;
+        }
+
+        /* Animaciones personalizadas */
+        @keyframes titleGlow {
+            0% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 215, 0, 0.4);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        /* Efectos de partículas en el hero */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        /* Responsive mejorado */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .cultura-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.5rem;
+            }
+            
+            .cultura-icons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--blanco);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 60px;
+                gap: 40px;
+                transition: left 0.4s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .lugares-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cultura-icons {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+            }
+            
+            .curiosidades-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-flag"></i>
+                    <span>Descubrí Uruguay</span>
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#lugares">Lugares</a>
+                    <a href="#cultura">Cultura</a>
+                    <a href="#mapa">Mapa</a>
+                    <a href="#curiosidades">Curiosidades</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1 data-aos="fade-down" data-aos-duration="1000">Descubrí Uruguay</h1>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Lugares increíbles, cultura viva y tradiciones únicas.</p>
+            <a href="#lugares" class="btn floating" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">Explorar Destinos</a>
+        </div>
+    </section>
+
+    <!-- Lugares Turísticos -->
+    <section id="lugares">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Lugares Turísticos Destacados</h2>
+            </div>
+            <div class="lugares-grid">
+                <div class="lugar-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="lugar-img" style="background-image: url('https://images.unsplash.com/photo-1595877244574-e90ce41ce089?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="lugar-content">
+                        <h3>Colonia del Sacramento</h3>
+                        <p>Ciudad histórica declarada Patrimonio de la Humanidad por la UNESCO, con calles empedradas y arquitectura colonial portuguesa y española.</p>
+                    </div>
+                </div>
+                <div class="lugar-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="lugar-img" style="background-image: url('https://images.unsplash.com/photo-1629909613656-1e61d45a8d59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="lugar-content">
+                        <h3>Punta del Este</h3>
+                        <p>Destino turístico exclusivo conocido por sus playas, vida nocturna y emblemáticos monumentos como "La Mano" y Casapueblo.</p>
+                    </div>
+                </div>
+                <div class="lugar-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="lugar-img" style="background-image: url('https://images.unsplash.com/photo-1583423230902-8a6d3f283d2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="lugar-content">
+                        <h3>Montevideo</h3>
+                        <p>La capital del país, con su Ciudad Vieja, el Mercado del Puerto y la Rambla costera de 22 km de extensión, la más larga del mundo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultura y Tradición -->
+    <section id="cultura" class="cultura">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Cultura y Tradición Uruguaya</h2>
+            </div>
+            <div class="cultura-content">
+                <div class="cultura-text" data-aos="fade-right">
+                    <p>Uruguay posee una identidad cultural única y distintiva, forjada a través de su historia y tradiciones autóctonas.</p>
+                    <p>El <strong>candombe</strong> es una expresión cultural y musical de raíces africanas declarada Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO, que se mantiene viva principalmente en los barrios Sur, Palermo y Cordón de Montevideo.</p>
+                    <p>La <strong>murga uruguaya</strong> es un género teatral-musical único que combina canto, baile y crítica social, siendo parte fundamental del Carnaval uruguayo, considerado el más largo del mundo.</p>
+                    <p>El <strong>chivito</strong> es el plato nacional uruguayo, una creación culinaria única que consiste en un sándwich de carne de res con diversos ingredientes, reconocido internacionalmente.</p>
+                </div>
+                <div class="cultura-icons" data-aos="fade-left" data-aos-delay="200">
+                    <div class="cultura-icon">
+                        <i class="fas fa-drum"></i>
+                        <h4>Candombe</h4>
+                        <p>Patrimonio UNESCO</p>
+                    </div>
+                    <div class="cultura-icon">
+                        <i class="fas fa-mask"></i>
+                        <h4>Murga</h4>
+                        <p>Arte único</p>
+                    </div>
+                    <div class="cultura-icon">
+                        <i class="fas fa-utensils"></i>
+                        <h4>Chivito</h4>
+                        <p>Plato nacional</p>
+                    </div>
+                    <div class="cultura-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                        <h4>Tannat</h4>
+                        <p>Vino emblemático</p>
+                    </div>
+                    <div class="cultura-icon">
+                        <i class="fas fa-gem"></i>
+                        <h4>Amatistas</h4>
+                        <p>Piedra nacional</p>
+                    </div>
+                    <div class="cultura-icon">
+                        <i class="fas fa-tree"></i>
+                        <h4>Ombú</h4>
+                        <p>Árbol emblemático</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section id="mapa">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Mapa de Uruguay</h2>
+            </div>
+            <div class="mapa-container" data-aos="zoom-in" data-aos-duration="1000">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406913.756772622!2d-58.4543535671875!3d-33.01846899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9576081a3f5ad9fd%3A0x9e7d38b2038b9f2c!2sUruguay!5e0!3m2!1ses-419!2sar!4v1687897890123!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section id="curiosidades" class="curiosidades">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Curiosidades Uruguayas</h2>
+            </div>
+            <div class="curiosidades-grid">
+                <div class="curiosidad-card" data-aos="flip-left" data-aos-delay="100">
+                    <i class="fas fa-award"></i>
+                    <h3>Primer Mundial de Fútbol</h3>
+                    <p>Uruguay organizó y ganó la primera Copa Mundial de Fútbol en 1930, siendo el primer campeón mundial de la historia.</p>
+                </div>
+                <div class="curiosidad-card" data-aos="flip-left" data-aos-delay="200">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Líder en Energía Renovable</h3>
+                    <p>Más del 95% de la electricidad de Uruguay proviene de fuentes renovables, siendo referente mundial en energía eólica.</p>
+                </div>
+                <div class="curiosidad-card" data-aos="flip-left" data-aos-delay="300">
+                    <i class="fas fa-book"></i>
+                    <h3>Plan Ceibal</h3>
+                    <p>Uruguay fue el primer país del mundo en proporcionar una computadora portátil a cada niño en edad escolar primaria.</p>
+                </div>
+                <div class="curiosidad-card" data-aos="flip-left" data-aos-delay="400">
+                    <i class="fas fa-peace"></i>
+                    <h3>País más pacífico</h3>
+                    <p>Uruguay es considerado el país más pacífico de América Latina según el Índice Global de Paz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-flag"></i>
+                    <span>Descubrí Uruguay</span>
+                </div>
+                <p>Explorá la belleza y cultura de este maravilloso país</p>
+                <div class="creditos">
+                    <p>Proyecto escolar realizado por 5to B - Fiesta de la Tradición</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Menú móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Partículas en el hero
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamaño y posición aleatorios
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Llamar a la función para crear partículas
+        createParticles();
+        
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Efecto de escritura en el título
+        const heroTitle = document.querySelector('.hero h1');
+        const originalText = heroTitle.textContent;
+        heroTitle.textContent = '';
+        
+        let i = 0;
+        function typeWriter() {
+            if (i < originalText.length) {
+                heroTitle.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        
+        // Iniciar efecto de escritura después de que la página cargue
+        window.addEventListener('load', () => {
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+</body>
+</html>
