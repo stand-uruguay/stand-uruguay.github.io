@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descubrí Uruguay - Lugares increíbles, cultura viva y tradiciones únicas">
     <title>Descubrí Uruguay - Fiesta de la Tradición</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -32,6 +34,7 @@
 
         html {
             scroll-behavior: smooth;
+            font-size: 14px; /* Base para rem */
         }
 
         body {
@@ -46,13 +49,13 @@
         }
 
         .container {
-            width: 90%;
+            width: 92%;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
-        /* Header */
+        /* Header - Mejorado para móvil */
         header {
             background: var(--blanco);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -74,23 +77,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
             transition: var(--transition);
         }
 
         header.scrolled .navbar {
-            padding: 12px 0;
+            padding: 10px 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-weight: 800;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: var(--celeste);
             text-decoration: none;
             transition: var(--transition);
+            z-index: 1002;
         }
 
         .logo:hover, .logo:active {
@@ -99,11 +103,11 @@
 
         .logo i {
             color: var(--dorado);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             transition: var(--transition);
         }
 
-        /* NAV LINKS */
+        /* NAV LINKS - Mejorado para móvil */
         .nav-links {
             display: flex;
             position: fixed;
@@ -116,8 +120,8 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            padding-top: 100px;
-            padding-left: 30px;
+            padding-top: 80px;
+            padding-left: 25px;
             gap: 0;
             transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 8px 0 30px rgba(0, 0, 0, 0.2);
@@ -133,8 +137,8 @@
             text-decoration: none;
             color: var(--gris-oscuro);
             font-weight: 600;
-            font-size: 1.3rem;
-            padding: 20px 0;
+            font-size: 1.2rem;
+            padding: 18px 0;
             width: 100%;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             transition: var(--transition);
@@ -166,9 +170,9 @@
         }
 
         .nav-links a i {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--celeste);
-            width: 28px;
+            width: 25px;
             text-align: center;
             transition: var(--transition);
         }
@@ -189,9 +193,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
-            font-size: 1.6rem;
+            width: 46px;
+            height: 46px;
+            font-size: 1.4rem;
             cursor: pointer;
             color: var(--celeste);
             background: none;
@@ -232,16 +236,17 @@
             visibility: visible;
         }
 
-        /* Hero Section */
+        /* Hero Section - Mejorado para móvil */
         .hero {
             height: 100vh;
-            min-height: 700px;
+            min-height: 600px;
+            max-height: 900px;
             background: 
                 linear-gradient(135deg, rgba(65, 137, 221, 0.4) 0%, rgba(255, 215, 0, 0.3) 100%),
-                url('img/hero-bg.webp');
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%234189DD"/><circle cx="400" cy="300" r="150" fill="%23FFD700" opacity="0.3"/></svg>');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll; /* Cambiado para mejor rendimiento móvil */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -268,6 +273,7 @@
             position: relative;
             z-index: 2;
             animation: fadeInUp 1s ease-out;
+            padding: 20px;
         }
 
         @keyframes fadeInUp {
@@ -282,8 +288,8 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
             font-weight: 800;
             color: var(--blanco);
@@ -291,8 +297,8 @@
         }
 
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
+            font-size: 1.2rem;
+            margin-bottom: 35px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
             font-weight: 500;
             line-height: 1.4;
@@ -300,19 +306,20 @@
 
         .btn {
             display: inline-block;
-            padding: 18px 40px;
+            padding: 16px 35px;
             background: linear-gradient(135deg, var(--dorado), var(--dorado-oscuro));
             color: var(--gris-oscuro);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: var(--transition);
             box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
             position: relative;
             overflow: hidden;
             border: none;
             cursor: pointer;
+            min-width: 180px;
         }
 
         .btn::after {
@@ -341,20 +348,20 @@
             box-shadow: 0 4px 15px rgba(255, 215, 0, 0.7);
         }
 
-        /* Secciones */
+        /* Secciones - Mejorado para móvil */
         section {
-            padding: 100px 0;
+            padding: 70px 0;
             position: relative;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             position: relative;
         }
 
         .section-title h2 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             color: var(--celeste-oscuro);
             font-weight: 800;
             position: relative;
@@ -365,8 +372,8 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 120px;
-            height: 5px;
+            width: 100px;
+            height: 4px;
             background: linear-gradient(90deg, var(--celeste), var(--dorado));
             bottom: 0;
             left: 50%;
@@ -374,16 +381,16 @@
             border-radius: 10px;
         }
 
-        /* Lugares Turísticos */
+        /* Lugares Turísticos - Mejorado para móvil */
         .lugares-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 25px;
         }
 
         .lugar-card {
             background-color: var(--blanco);
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--sombra);
             transition: var(--transition);
@@ -394,17 +401,30 @@
         }
 
         .lugar-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: var(--sombra-hover);
         }
 
         .lugar-img {
-            height: 280px;
+            height: 220px;
             width: 100%;
             background-size: cover;
             background-position: center;
             transition: var(--transition);
             background-color: #e0e0e0;
+            position: relative;
+        }
+
+        .lugar-img::before {
+            content: 'Imagen no disponible';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            z-index: -1;
         }
 
         .lugar-card:hover .lugar-img {
@@ -412,7 +432,7 @@
         }
 
         .lugar-content {
-            padding: 30px;
+            padding: 25px 20px;
             position: relative;
             z-index: 2;
             flex-grow: 1;
@@ -421,20 +441,20 @@
         }
 
         .lugar-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
             color: var(--celeste-oscuro);
             font-weight: 700;
         }
 
         .lugar-content p {
             color: #555;
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.6;
             flex-grow: 1;
         }
 
-        /* Cultura */
+        /* Cultura - Mejorado para móvil */
         .cultura {
             background: linear-gradient(135deg, var(--gris) 0%, #e8ecf1 100%);
         }
@@ -442,7 +462,7 @@
         .cultura-content {
             display: flex;
             flex-direction: column;
-            gap: 50px;
+            gap: 40px;
         }
 
         .cultura-text {
@@ -450,22 +470,22 @@
         }
 
         .cultura-text p {
-            margin-bottom: 25px;
-            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
             line-height: 1.7;
         }
 
         .cultura-icons {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            gap: 20px;
         }
 
         .cultura-icon {
             text-align: center;
-            padding: 30px 20px;
+            padding: 25px 15px;
             background-color: var(--blanco);
-            border-radius: 15px;
+            border-radius: 12px;
             box-shadow: var(--sombra);
             transition: var(--transition);
             position: relative;
@@ -473,7 +493,7 @@
         }
 
         .cultura-icon:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             box-shadow: var(--sombra-hover);
         }
 
@@ -483,7 +503,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 4px;
             background: linear-gradient(90deg, var(--celeste), var(--dorado));
             transform: scaleX(0);
             transform-origin: left;
@@ -495,9 +515,9 @@
         }
 
         .cultura-icon i {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             color: var(--celeste);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             transition: var(--transition);
         }
 
@@ -507,23 +527,23 @@
         }
 
         .cultura-icon h4 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
             color: var(--celeste-oscuro);
             font-weight: 700;
         }
 
         .cultura-icon p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #666;
         }
 
-        /* Mapa */
+        /* Mapa - Mejorado para móvil */
         .mapa-container {
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--sombra-hover);
-            height: 500px;
+            height: 400px;
             position: relative;
         }
 
@@ -533,7 +553,7 @@
             border: none;
         }
 
-        /* Curiosidades */
+        /* Curiosidades - Mejorado para móvil */
         .curiosidades {
             background: linear-gradient(135deg, #e8ecf1 0%, var(--gris) 100%);
         }
@@ -541,13 +561,13 @@
         .curiosidades-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 25px;
         }
 
         .curiosidad-card {
             background-color: var(--blanco);
-            padding: 40px 30px;
-            border-radius: 20px;
+            padding: 30px 25px;
+            border-radius: 16px;
             box-shadow: var(--sombra);
             text-align: center;
             transition: var(--transition);
@@ -556,7 +576,7 @@
         }
 
         .curiosidad-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             box-shadow: var(--sombra-hover);
         }
 
@@ -577,9 +597,9 @@
         }
 
         .curiosidad-card i {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             color: var(--dorado);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             transition: var(--transition);
             position: relative;
             z-index: 2;
@@ -590,8 +610,8 @@
         }
 
         .curiosidad-card h3 {
-            font-size: 1.7rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--celeste-oscuro);
             font-weight: 700;
             position: relative;
@@ -600,33 +620,33 @@
 
         .curiosidad-card p {
             color: #555;
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.6;
             position: relative;
             z-index: 2;
         }
 
-        /* PROMO XXV Section */
+        /* PROMO XXV Section - Mejorado para móvil */
         .promo-section {
             background: linear-gradient(135deg, var(--celeste-claro) 0%, var(--celeste-oscuro) 100%);
             color: var(--blanco);
-            padding: 100px 0;
+            padding: 70px 0;
             text-align: center;
         }
 
         .promo-content {
             max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         .promo-title {
-            font-size: 3.5rem;
-            margin-bottom: 30px;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
             color: var(--blanco);
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -634,56 +654,56 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 25px;
+            margin-bottom: 35px;
         }
 
         .promo-item {
             background: rgba(255, 255, 255, 0.1);
-            padding: 30px 20px;
-            border-radius: 15px;
+            padding: 25px 15px;
+            border-radius: 12px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            flex: 0 1 300px;
-            max-width: 350px;
+            flex: 0 1 280px;
+            max-width: 100%;
         }
 
         .promo-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             background: rgba(255, 255, 255, 0.2);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .promo-item h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
             color: var(--dorado);
             font-weight: 700;
         }
 
         .promo-item p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--blanco);
             line-height: 1.5;
         }
 
         .promo-description {
-            font-size: 1.3rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .instagram-section {
-            margin: 30px 0;
-            padding: 30px;
+            margin: 25px 0;
+            padding: 25px 20px;
             background: linear-gradient(45deg, rgba(225, 48, 108, 0.2), rgba(253, 29, 29, 0.2), rgba(255, 159, 28, 0.2));
-            border-radius: 20px;
+            border-radius: 16px;
             width: 100%;
-            max-width: 600px;
+            max-width: 100%;
             margin-left: auto;
             margin-right: auto;
             backdrop-filter: blur(10px);
@@ -691,8 +711,8 @@
         }
 
         .instagram-title {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
             color: var(--blanco);
             font-weight: 600;
         }
@@ -700,14 +720,14 @@
         .instagram-link {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 15px 30px;
+            gap: 10px;
+            padding: 14px 25px;
             background: linear-gradient(45deg, #E1306C, #F77737, #FCAF45);
             color: var(--blanco);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: var(--transition);
             box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
         }
@@ -722,14 +742,14 @@
         }
 
         .instagram-link i {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
-        /* Footer */
+        /* Footer - Mejorado para móvil */
         footer {
             background: linear-gradient(135deg, var(--gris-oscuro) 0%, #1a2530 100%);
             color: var(--blanco);
-            padding: 80px 0 40px;
+            padding: 60px 0 30px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -741,7 +761,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 4px;
             background: linear-gradient(90deg, var(--celeste), var(--dorado));
         }
 
@@ -749,7 +769,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
             position: relative;
             z-index: 2;
         }
@@ -758,15 +778,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 15px;
         }
 
         .footer-logo-icon {
             display: flex;
             align-items: center;
-            gap: 15px;
-            font-size: 2.2rem;
+            gap: 12px;
+            font-size: 1.8rem;
             font-weight: 800;
             transition: var(--transition);
         }
@@ -777,37 +797,37 @@
 
         .footer-logo-icon i {
             color: var(--dorado);
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
 
         .footer-tagline {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             max-width: 600px;
-            margin: 0 auto 30px;
+            margin: 0 auto 25px;
             color: var(--blanco);
             font-weight: 500;
             line-height: 1.5;
         }
 
         .creditos {
-            margin-top: 40px;
-            padding-top: 30px;
+            margin-top: 30px;
+            padding-top: 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
             width: 100%;
             max-width: 800px;
         }
 
         .creditos p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #aaa;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .creditos .fiesta-tradicion {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--dorado);
             font-weight: 600;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
         /* Decoración del footer */
@@ -816,7 +836,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 100px;
+            height: 80px;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%234189DD"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%234189DD"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%234189DD"/></svg>');
             background-size: cover;
             background-repeat: no-repeat;
@@ -841,27 +861,98 @@
             opacity: 1;
         }
 
-        /* Imágenes optimizadas */
-        .lugar-img {
-            background-color: #e0e0e0;
-            position: relative;
-        }
+        /* ========== MEDIA QUERIES MEJORADAS ========== */
 
-        .lugar-img::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-            z-index: -1;
+        /* Móviles pequeños (hasta 360px) */
+        @media (max-width: 360px) {
+            html {
+                font-size: 13px;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+                font-size: 0.95rem;
+                min-width: 160px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.9rem;
+            }
+            
+            .cultura-icons {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                width: 90%;
+                padding-left: 20px;
+            }
+            
+            .lugar-content, .curiosidad-card {
+                padding: 20px 15px;
+            }
+            
+            .footer-logo-icon {
+                font-size: 1.6rem;
+            }
+            
+            .footer-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .promo-title {
+                font-size: 2rem;
+            }
+            
+            .promo-item {
+                padding: 20px 12px;
+            }
+            
+            .promo-item h3 {
+                font-size: 1.3rem;
+            }
+            
+            .promo-item p {
+                font-size: 1rem;
+            }
+            
+            .promo-description {
+                font-size: 1.1rem;
+            }
+            
+            .instagram-section {
+                padding: 20px 15px;
+            }
+            
+            .instagram-title {
+                font-size: 1.3rem;
+            }
+            
+            .instagram-link {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
         }
-
-        /* ========== MEDIA QUERIES ========== */
 
         /* Tabletas pequeñas (481px - 768px) */
         @media (min-width: 481px) and (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+            
             .hero h1 {
                 font-size: 3rem;
             }
@@ -880,35 +971,49 @@
             
             .lugares-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
             }
             
             .curiosidades-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
             }
             
             .promo-info {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                align-items: stretch;
             }
             
             .promo-item {
                 width: 100%;
-                max-width: 400px;
+                max-width: 280px;
             }
 
             .promo-title {
                 font-size: 2.8rem;
             }
+            
+            .mapa-container {
+                height: 450px;
+            }
         }
 
         /* Tabletas grandes (769px - 1024px) */
         @media (min-width: 769px) and (max-width: 1024px) {
+            html {
+                font-size: 16px;
+            }
+            
             .container {
                 width: 90%;
             }
             
+            .hero {
+                min-height: 700px;
+            }
+            
             .hero h1 {
-                font-size: 4rem;
+                font-size: 3.8rem;
             }
             
             .hero p {
@@ -926,21 +1031,24 @@
             
             .cultura-icons {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
             }
             
             .lugares-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
             }
             
             .curiosidades-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
             }
 
             .promo-title {
                 font-size: 3rem;
             }
 
-            /* NAV LINKS PARA TABLET */
+            /* NAV LINKS PARA TABLET - CORREGIDO */
             .nav-links {
                 position: static;
                 width: auto;
@@ -959,6 +1067,7 @@
                 border-bottom: none;
                 width: auto;
                 font-size: 1.1rem;
+                position: relative;
             }
 
             .nav-links a::after {
@@ -980,6 +1089,7 @@
             .nav-links a:hover,
             .nav-links a:active {
                 transform: translateY(-3px);
+                color: var(--celeste-oscuro);
             }
 
             .nav-links a i {
@@ -997,6 +1107,10 @@
 
         /* Desktop (1025px en adelante) */
         @media (min-width: 1025px) {
+            html {
+                font-size: 16px;
+            }
+            
             .container {
                 width: 85%;
                 max-width: 1400px;
@@ -1004,10 +1118,11 @@
             
             .hero {
                 min-height: 800px;
+                background-attachment: fixed;
             }
             
             .hero h1 {
-                font-size: 5rem;
+                font-size: 4.5rem;
             }
             
             .hero p {
@@ -1074,7 +1189,7 @@
                 font-size: 4rem;
             }
 
-            /* NAV LINKS PARA DESKTOP */
+            /* NAV LINKS PARA DESKTOP - CORREGIDO */
             .nav-links {
                 position: static;
                 width: auto;
@@ -1094,6 +1209,7 @@
                 width: auto;
                 font-size: 1.2rem;
                 font-weight: 600;
+                position: relative;
             }
 
             .nav-links a::after {
@@ -1158,77 +1274,24 @@
             }
         }
 
-        /* Optimización para pantallas muy pequeñas */
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.5rem;
+        /* Optimización para orientación landscape en móviles */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                min-height: 100vh;
+                height: auto;
+                padding: 80px 20px;
             }
             
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .btn {
-                padding: 16px 35px;
-                font-size: 1rem;
-            }
-            
-            .cultura-icons {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
+            .hero-content {
+                padding: 20px 0;
             }
             
             .nav-links {
-                width: 85%;
-                padding-left: 25px;
+                padding-top: 70px;
             }
             
-            .lugar-content, .curiosidad-card {
-                padding: 25px 20px;
-            }
-            
-            .footer-logo-icon {
-                font-size: 1.8rem;
-            }
-            
-            .footer-tagline {
-                font-size: 1.2rem;
-            }
-            
-            .promo-title {
-                font-size: 2.2rem;
-            }
-            
-            .promo-item {
-                padding: 20px 15px;
-            }
-            
-            .promo-item h3 {
-                font-size: 1.5rem;
-            }
-            
-            .promo-item p {
-                font-size: 1rem;
-            }
-            
-            .promo-description {
-                font-size: 1.1rem;
-            }
-            
-            .instagram-section {
-                padding: 20px;
-            }
-            
-            .instagram-title {
-                font-size: 1.4rem;
-            }
-            
-            .instagram-link {
-                padding: 12px 25px;
-                font-size: 1.1rem;
+            .nav-links a {
+                padding: 12px 0;
             }
         }
 
@@ -1236,6 +1299,30 @@
         @media screen and (max-width: 768px) {
             input, select, textarea {
                 font-size: 16px !important;
+            }
+        }
+
+        /* Mejoras de accesibilidad para modo alto contraste */
+        @media (prefers-contrast: high) {
+            .btn, .instagram-link {
+                border: 2px solid currentColor;
+            }
+            
+            .lugar-card, .cultura-icon, .curiosidad-card, .promo-item {
+                border: 1px solid var(--gris-oscuro);
+            }
+        }
+
+        /* Mejoras para reducir movimiento */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .hero-content {
+                animation: none;
             }
         }
     </style>
@@ -1246,19 +1333,19 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                    <i class="fas fa-flag"></i>
+                    <i class="fas fa-flag" aria-hidden="true"></i>
                     <span>Descubrí Uruguay</span>
                 </a>
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
-                    <i class="fas fa-bars"></i>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks" aria-haspopup="true">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
                 <div class="nav-links" id="navLinks" role="navigation" aria-label="Menú principal">
-                    <a href="#inicio" role="menuitem"><i class="fas fa-home"></i>Inicio</a>
-                    <a href="#lugares" role="menuitem"><i class="fas fa-map-marked-alt"></i>Lugares</a>
-                    <a href="#cultura" role="menuitem"><i class="fas fa-music"></i>Cultura</a>
-                    <a href="#mapa" role="menuitem"><i class="fas fa-map"></i>Mapa</a>
-                    <a href="#curiosidades" role="menuitem"><i class="fas fa-lightbulb"></i>Curiosidades</a>
-                    <a href="#promo" role="menuitem"><i class="fas fa-users"></i>PROMO XXV</a>
+                    <a href="#inicio" role="menuitem"><i class="fas fa-home" aria-hidden="true"></i>Inicio</a>
+                    <a href="#lugares" role="menuitem"><i class="fas fa-map-marked-alt" aria-hidden="true"></i>Lugares</a>
+                    <a href="#cultura" role="menuitem"><i class="fas fa-music" aria-hidden="true"></i>Cultura</a>
+                    <a href="#mapa" role="menuitem"><i class="fas fa-map" aria-hidden="true"></i>Mapa</a>
+                    <a href="#curiosidades" role="menuitem"><i class="fas fa-lightbulb" aria-hidden="true"></i>Curiosidades</a>
+                    <a href="#promo" role="menuitem"><i class="fas fa-users" aria-hidden="true"></i>PROMO XXV</a>
                 </div>
             </nav>
         </div>
@@ -1282,21 +1369,21 @@
             </div>
             <div class="lugares-grid">
                 <div class="lugar-card performance-optimized">
-                    <div class="lugar-img" style="background-image: url('img/colonia.webp');" role="img" aria-label="Vista de Colonia del Sacramento"></div>
+                    <div class="lugar-img" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"300\" viewBox=\"0 0 400 300\"><rect width=\"400\" height=\"300\" fill=\"%236CAEF5\"/><text x=\"200\" y=\"150\" text-anchor=\"middle\" fill=\"%232A5F9E\" font-family=\"Arial\" font-size=\"24\">Colonia del Sacramento</text></svg>');" role="img" aria-label="Vista de Colonia del Sacramento"></div>
                     <div class="lugar-content">
                         <h3>Colonia del Sacramento</h3>
                         <p>Ciudad histórica declarada Patrimonio de la Humanidad por la UNESCO, con calles empedradas y arquitectura colonial portuguesa y española. Un viaje en el tiempo que te transportará a la época colonial.</p>
                     </div>
                 </div>
                 <div class="lugar-card performance-optimized">
-                    <div class="lugar-img" style="background-image: url('img/punta-del-este.webp');" role="img" aria-label="Vista de Punta del Este"></div>
+                    <div class="lugar-img" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"300\" viewBox=\"0 0 400 300\"><rect width=\"400\" height=\"300\" fill=\"%236CAEF5\"/><text x=\"200\" y=\"150\" text-anchor=\"middle\" fill=\"%232A5F9E\" font-family=\"Arial\" font-size=\"24\">Punta del Este</text></svg>');" role="img" aria-label="Vista de Punta del Este"></div>
                     <div class="lugar-content">
                         <h3>Punta del Este</h3>
                         <p>Destino turístico exclusivo conocido por sus playas, vida nocturna y emblemáticos monumentos como "La Mano" y Casapueblo. El balneario más famoso de Sudamérica.</p>
                     </div>
                 </div>
                 <div class="lugar-card performance-optimized">
-                    <div class="lugar-img" style="background-image: url('img/montevideo.webp');" role="img" aria-label="Vista de Montevideo"></div>
+                    <div class="lugar-img" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"300\" viewBox=\"0 0 400 300\"><rect width=\"400\" height=\"300\" fill=\"%236CAEF5\"/><text x=\"200\" y=\"150\" text-anchor=\"middle\" fill=\"%232A5F9E\" font-family=\"Arial\" font-size=\"24\">Montevideo</text></svg>');" role="img" aria-label="Vista de Montevideo"></div>
                     <div class="lugar-content">
                         <h3>Montevideo</h3>
                         <p>La capital del país, con su Ciudad Vieja, el Mercado del Puerto y la Rambla costera de 22 km de extensión, la más larga del mundo. Una ciudad que combina historia y modernidad.</p>
@@ -1321,32 +1408,32 @@
                 </div>
                 <div class="cultura-icons">
                     <div class="cultura-icon performance-optimized">
-                        <i class="fas fa-drum"></i>
+                        <i class="fas fa-drum" aria-hidden="true"></i>
                         <h4>Candombe</h4>
                         <p>Patrimonio UNESCO</p>
                     </div>
                     <div class="cultura-icon performance-optimized">
-                        <i class="fas fa-mask"></i>
+                        <i class="fas fa-mask" aria-hidden="true"></i>
                         <h4>Murga</h4>
                         <p>Arte único</p>
                     </div>
                     <div class="cultura-icon performance-optimized">
-                        <i class="fas fa-utensils"></i>
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
                         <h4>Chivito</h4>
                         <p>Plato nacional</p>
                     </div>
                     <div class="cultura-icon performance-optimized">
-                        <i class="fas fa-wine-bottle"></i>
+                        <i class="fas fa-wine-bottle" aria-hidden="true"></i>
                         <h4>Tannat</h4>
                         <p>Vino emblemático</p>
                     </div>
                     <div class="cultura-icon performance-optimized">
-                        <i class="fas fa-gem"></i>
+                        <i class="fas fa-gem" aria-hidden="true"></i>
                         <h4>Amatistas</h4>
                         <p>Piedra nacional</p>
                     </div>
                     <div class="cultura-icon performance-optimized">
-                        <i class="fas fa-tree"></i>
+                        <i class="fas fa-tree" aria-hidden="true"></i>
                         <h4>Ombú</h4>
                         <p>Árbol emblemático</p>
                     </div>
@@ -1375,22 +1462,22 @@
             </div>
             <div class="curiosidades-grid">
                 <div class="curiosidad-card performance-optimized">
-                    <i class="fas fa-award"></i>
+                    <i class="fas fa-award" aria-hidden="true"></i>
                     <h3>Primer Mundial de Fútbol</h3>
                     <p>Uruguay organizó y ganó la primera Copa Mundial de Fútbol en 1930, siendo el primer campeón mundial de la historia.</p>
                 </div>
                 <div class="curiosidad-card performance-optimized">
-                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-leaf" aria-hidden="true"></i>
                     <h3>Líder en Energía Renovable</h3>
                     <p>Más del 95% de la electricidad de Uruguay proviene de fuentes renovables, siendo referente mundial en energía eólica.</p>
                 </div>
                 <div class="curiosidad-card performance-optimized">
-                    <i class="fas fa-book"></i>
+                    <i class="fas fa-book" aria-hidden="true"></i>
                     <h3>Plan Ceibal</h3>
                     <p>Uruguay fue el primer país del mundo en proporcionar una computadora portátil a cada niño en edad escolar primaria.</p>
                 </div>
                 <div class="curiosidad-card performance-optimized">
-                    <i class="fas fa-peace"></i>
+                    <i class="fas fa-peace" aria-hidden="true"></i>
                     <h3>País más pacífico</h3>
                     <p>Uruguay es considerado el país más pacífico de América Latina según el Índice Global de Paz.</p>
                 </div>
@@ -1418,8 +1505,8 @@
                 
                 <div class="instagram-section">
                     <h3 class="instagram-title">Seguinos en Instagram</h3>
-                    <a href="https://www.instagram.com/promo_xxv_comunicacion?igsh=MWptcnR1d3hvbXJkcg==" class="instagram-link" target="_blank" rel="noopener">
-                        <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/promo_xxv_comunicacion?igsh=MWptcnR1d3hvbXJkcg==" class="instagram-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
                         @promo_xxv_comunicacion
                     </a>
                 </div>
@@ -1428,13 +1515,13 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-decoration"></div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="footer-logo-icon">
-                        <i class="fas fa-flag"></i>
+                        <i class="fas fa-flag" aria-hidden="true"></i>
                         <span>Descubrí Uruguay</span>
                     </div>
                     <p class="footer-tagline">Explorá la belleza y cultura de este maravilloso país</p>
@@ -1475,12 +1562,13 @@
             const label = appState.isMenuOpen ? 'Cerrar menú' : 'Abrir menú';
             const expanded = appState.isMenuOpen ? 'true' : 'false';
             
-            menuToggle.innerHTML = `<i class="fas fa-${icon}"></i>`;
+            menuToggle.innerHTML = `<i class="fas fa-${icon}" aria-hidden="true"></i>`;
             menuToggle.setAttribute('aria-label', label);
             menuToggle.setAttribute('aria-expanded', expanded);
             
             // Controlar scroll del body
             document.body.style.overflow = appState.isMenuOpen ? 'hidden' : '';
+            document.body.style.position = appState.isMenuOpen ? 'fixed' : '';
         }
 
         // Función para cerrar menú
@@ -1532,21 +1620,21 @@
             }
         }
 
-        // Smooth scrolling optimizado
+        // Smooth scrolling optimizado - CORREGIDO
         function initSmoothScrolling() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
-                    // No aplicar smooth scroll para enlaces que no sean de anclaje interno
-                    if (this.getAttribute('href') === '#') return;
+                    const href = this.getAttribute('href');
+                    
+                    // Solo procesar enlaces internos que no sean solo "#"
+                    if (href === '#' || href === '#!') return;
                     
                     e.preventDefault();
                     
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
+                    const targetElement = document.querySelector(href);
                     if (targetElement) {
-                        const headerHeight = header?.offsetHeight || 0;
-                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        const headerHeight = header ? header.offsetHeight : 0;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                         
                         window.scrollTo({
                             top: targetPosition,
@@ -1569,34 +1657,6 @@
             });
         }
 
-        // Lazy loading para imágenes no críticas
-        function initLazyLoading() {
-            const lazyImages = document.querySelectorAll('.lugar-img');
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.style.backgroundImage = img.style.backgroundImage;
-                            img.classList.add('loaded');
-                            imageObserver.unobserve(img);
-                        }
-                    });
-                });
-                
-                lazyImages.forEach(img => {
-                    imageObserver.observe(img);
-                    img.classList.add('loading');
-                });
-            } else {
-                // Fallback para navegadores sin IntersectionObserver
-                lazyImages.forEach(img => {
-                    img.classList.add('loaded');
-                });
-            }
-        }
-
         // Cerrar menú al cambiar tamaño de ventana a desktop
         function handleResize() {
             if (window.innerWidth >= 769 && appState.isMenuOpen) {
@@ -1613,14 +1673,30 @@
             });
         }
 
+        // Mejorar rendimiento en dispositivos táctiles
+        function improveTouchPerformance() {
+            // Prevenir zoom en doble tap
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function (event) {
+                const now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+            
+            // Mejorar respuesta táctil
+            document.addEventListener('touchstart', function() {}, {passive: true});
+        }
+
         // Inicializar todas las funcionalidades
         function init() {
             initMenu();
             initHeaderScroll();
             initSmoothScrolling();
             preloadCriticalImages();
-            initLazyLoading();
             preventImageDrag();
+            improveTouchPerformance();
             
             // Event listeners adicionales
             window.addEventListener('resize', handleResize);
@@ -1628,6 +1704,9 @@
             // Agregar clase de carga inicial para transiciones suaves
             window.addEventListener('load', function() {
                 document.body.classList.add('loaded');
+                
+                // Restaurar posición del body después de cargar
+                document.body.style.position = '';
             });
         }
 
