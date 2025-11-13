@@ -20,12 +20,14 @@
             --gris-oscuro: #2c3e50;
             --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
             --sombra-hover: 0 6px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         html {
@@ -40,6 +42,7 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            touch-action: manipulation;
         }
 
         .container {
@@ -49,7 +52,7 @@
             padding: 0 15px;
         }
 
-        /* Header optimizado para móviles */
+        /* Header optimizado para móviles - MEJORADO */
         header {
             background: var(--blanco);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -57,11 +60,14 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         header.scrolled {
-            padding: 8px 0;
+            padding: 5px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
         }
 
         .navbar {
@@ -69,6 +75,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled .navbar {
+            padding: 10px 0;
         }
 
         .logo {
@@ -79,27 +90,39 @@
             font-size: 1.4rem;
             color: var(--celeste);
             text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:active {
+            transform: scale(0.95);
         }
 
         .logo i {
             color: var(--dorado);
             font-size: 1.6rem;
+            transition: var(--transition);
         }
 
+        /* NAV LINKS MEJORADO - Menú móvil premium */
         .nav-links {
+            display: flex;
             position: fixed;
             top: 0;
             left: -100%;
-            width: 80%;
+            width: 85%;
+            max-width: 320px;
             height: 100vh;
             background-color: var(--blanco);
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            transition: left 0.3s ease;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding-top: 80px;
+            padding-left: 30px;
+            gap: 0;
+            transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
             z-index: 999;
+            overflow-y: auto;
         }
 
         .nav-links.active {
@@ -111,31 +134,111 @@
             color: var(--gris-oscuro);
             font-weight: 600;
             font-size: 1.2rem;
-            padding: 10px 0;
-            transition: color 0.3s ease;
+            padding: 18px 0;
+            width: 100%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .nav-links a:hover {
+        .nav-links a:last-child {
+            border-bottom: none;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(65, 137, 221, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a:active::before {
+            left: 100%;
+        }
+
+        .nav-links a i {
+            font-size: 1.1rem;
             color: var(--celeste);
+            width: 24px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a:active {
+            color: var(--celeste);
+            transform: translateX(5px);
+        }
+
+        .nav-links a:hover i,
+        .nav-links a:active i {
+            color: var(--dorado);
+            transform: scale(1.2);
         }
 
         .menu-toggle {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--celeste);
             background: none;
             border: none;
             z-index: 1001;
+            border-radius: 50%;
+            transition: var(--transition);
+            position: relative;
         }
 
-        /* Hero Section optimizada para móviles */
+        .menu-toggle:active {
+            background-color: rgba(65, 137, 221, 0.1);
+            transform: scale(0.92);
+        }
+
+        .menu-toggle.active {
+            color: var(--celeste-oscuro);
+        }
+
+        /* Overlay para el menú móvil - MEJORADO */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hero Section optimizada para móviles - MEJORADA */
         .hero {
             height: 100vh;
             min-height: 600px;
             background: 
                 linear-gradient(135deg, rgba(65, 137, 221, 0.4) 0%, rgba(255, 215, 0, 0.3) 100%),
-                url('img/hero-uruguay.jpg');
+                url('img/hero-uruguay.webp');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -162,6 +265,18 @@
             max-width: 100%;
             position: relative;
             z-index: 2;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h1 {
@@ -170,6 +285,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             font-weight: 700;
             color: var(--blanco);
+            line-height: 1.2;
         }
 
         .hero p {
@@ -182,22 +298,41 @@
 
         .btn {
             display: inline-block;
-            padding: 14px 32px;
+            padding: 16px 34px;
             background: linear-gradient(135deg, var(--dorado), var(--dorado-oscuro));
             color: var(--gris-oscuro);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::after,
+        .btn:active::after {
+            left: 100%;
         }
 
         .btn:active {
-            transform: scale(0.98);
+            transform: scale(0.96);
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.6);
         }
 
-        /* Secciones optimizadas */
+        /* Secciones optimizadas - MEJORADAS */
         section {
             padding: 70px 0;
             position: relative;
@@ -229,7 +364,7 @@
             border-radius: 10px;
         }
 
-        /* Lugares Turísticos optimizados para móviles */
+        /* Lugares Turísticos optimizados para móviles - MEJORADOS */
         .lugares-grid {
             display: flex;
             flex-direction: column;
@@ -241,11 +376,31 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--sombra);
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .lugar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.3));
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .lugar-card:hover::before,
+        .lugar-card:active::before {
+            opacity: 1;
         }
 
         .lugar-card:active {
             transform: scale(0.99);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         .lugar-img {
@@ -253,10 +408,17 @@
             width: 100%;
             background-size: cover;
             background-position: center;
+            transition: var(--transition);
+        }
+
+        .lugar-card:active .lugar-img {
+            transform: scale(1.05);
         }
 
         .lugar-content {
             padding: 20px;
+            position: relative;
+            z-index: 2;
         }
 
         .lugar-content h3 {
@@ -272,7 +434,7 @@
             line-height: 1.5;
         }
 
-        /* Cultura optimizada para móviles */
+        /* Cultura optimizada para móviles - MEJORADA */
         .cultura {
             background: linear-gradient(135deg, var(--gris) 0%, #e8ecf1 100%);
         }
@@ -301,17 +463,44 @@
             background-color: var(--blanco);
             border-radius: 12px;
             box-shadow: var(--sombra);
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cultura-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--celeste), var(--dorado));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .cultura-icon:hover::before,
+        .cultura-icon:active::before {
+            transform: scaleX(1);
         }
 
         .cultura-icon:active {
             transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .cultura-icon i {
             font-size: 2.2rem;
             color: var(--celeste);
             margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .cultura-icon:active i {
+            transform: scale(1.1);
+            color: var(--dorado);
         }
 
         .cultura-icon h4 {
@@ -326,7 +515,7 @@
             color: #666;
         }
 
-        /* Mapa optimizado para móviles */
+        /* Mapa optimizado para móviles - MEJORADO */
         .mapa-container {
             border-radius: 15px;
             overflow: hidden;
@@ -341,7 +530,7 @@
             border: none;
         }
 
-        /* Curiosidades optimizadas para móviles */
+        /* Curiosidades optimizadas para móviles - MEJORADAS */
         .curiosidades {
             background: linear-gradient(135deg, #e8ecf1 0%, var(--gris) 100%);
         }
@@ -358,17 +547,44 @@
             border-radius: 15px;
             box-shadow: var(--sombra);
             text-align: center;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .curiosidad-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(65, 137, 221, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .curiosidad-card:hover::before,
+        .curiosidad-card:active::before {
+            opacity: 1;
         }
 
         .curiosidad-card:active {
             transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .curiosidad-card i {
             font-size: 2.5rem;
             color: var(--dorado);
             margin-bottom: 15px;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+        }
+
+        .curiosidad-card:active i {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .curiosidad-card h3 {
@@ -376,15 +592,19 @@
             margin-bottom: 12px;
             color: var(--celeste-oscuro);
             font-weight: 600;
+            position: relative;
+            z-index: 2;
         }
 
         .curiosidad-card p {
             color: #555;
             font-size: 1rem;
             line-height: 1.5;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Footer optimizado para móviles */
+        /* Footer optimizado para móviles - MEJORADO */
         footer {
             background: linear-gradient(135deg, var(--gris-oscuro) 0%, #1a2530 100%);
             color: var(--blanco);
@@ -416,6 +636,11 @@
             gap: 12px;
             font-size: 1.5rem;
             font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .footer-logo:active {
+            transform: scale(0.95);
         }
 
         .footer-logo i {
@@ -430,23 +655,38 @@
             max-width: 100%;
         }
 
-        /* Overlay para el menú móvil */
-        .menu-overlay {
+        /* Botón de volver arriba - NUEVO */
+        .back-to-top {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 998;
+            bottom: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--celeste), var(--celeste-oscuro));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(65, 137, 221, 0.4);
+            z-index: 99;
+            cursor: pointer;
+            transition: var(--transition);
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transform: translateY(20px);
         }
 
-        .menu-overlay.active {
+        .back-to-top.active {
             opacity: 1;
             visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:active {
+            transform: scale(0.9);
+            box-shadow: 0 2px 8px rgba(65, 137, 221, 0.6);
         }
 
         /* Mejoras para tablets pequeñas */
@@ -474,7 +714,7 @@
             }
         }
 
-        /* Mejoras para tablets grandes */
+        /* Mejoras para tablets grandes y desktop */
         @media (min-width: 769px) {
             .container {
                 width: 85%;
@@ -512,6 +752,60 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 25px;
             }
+
+            /* NAV LINKS PARA DESKTOP - MEJORADO */
+            .nav-links {
+                position: static;
+                width: auto;
+                height: auto;
+                flex-direction: row;
+                background: none;
+                box-shadow: none;
+                gap: 25px;
+                padding: 0;
+                max-width: none;
+                overflow: visible;
+            }
+
+            .nav-links a {
+                padding: 8px 0;
+                border-bottom: none;
+                width: auto;
+                font-size: 1rem;
+            }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--dorado);
+                transition: width 0.3s ease;
+            }
+
+            .nav-links a:hover::after,
+            .nav-links a:active::after {
+                width: 100%;
+            }
+
+            .nav-links a:hover,
+            .nav-links a:active {
+                transform: translateY(-2px);
+            }
+
+            .nav-links a i {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .menu-overlay {
+                display: none;
+            }
         }
 
         /* Optimización para pantallas muy pequeñas */
@@ -525,7 +819,7 @@
             }
             
             .btn {
-                padding: 12px 25px;
+                padding: 14px 28px;
                 font-size: 0.95rem;
             }
             
@@ -535,6 +829,18 @@
             
             .section-title h2 {
                 font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                width: 80%;
+                padding-left: 20px;
+            }
+        }
+
+        /* Prevención de zoom en inputs en iOS */
+        @media screen and (max-width: 768px) {
+            input, select, textarea {
+                font-size: 16px !important;
             }
         }
     </style>
@@ -552,16 +858,21 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="nav-links" id="navLinks">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#lugares">Lugares</a>
-                    <a href="#cultura">Cultura</a>
-                    <a href="#mapa">Mapa</a>
-                    <a href="#curiosidades">Curiosidades</a>
+                    <a href="#inicio"><i class="fas fa-home"></i>Inicio</a>
+                    <a href="#lugares"><i class="fas fa-map-marked-alt"></i>Lugares</a>
+                    <a href="#cultura"><i class="fas fa-music"></i>Cultura</a>
+                    <a href="#mapa"><i class="fas fa-map"></i>Mapa</a>
+                    <a href="#curiosidades"><i class="fas fa-lightbulb"></i>Curiosidades</a>
                 </div>
             </nav>
         </div>
         <div class="menu-overlay" id="menuOverlay"></div>
     </header>
+
+    <!-- Botón Volver Arriba -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
@@ -713,14 +1024,16 @@
     </footer>
 
     <script>
-        // Menú móvil optimizado
+        // Menú móvil optimizado - MEJORADO
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         const menuOverlay = document.getElementById('menuOverlay');
+        const backToTop = document.getElementById('backToTop');
         
         function toggleMenu() {
             const isActive = navLinks.classList.toggle('active');
             menuOverlay.classList.toggle('active');
+            menuToggle.classList.toggle('active');
             menuToggle.innerHTML = isActive 
                 ? '<i class="fas fa-times"></i>' 
                 : '<i class="fas fa-bars"></i>';
@@ -743,19 +1056,27 @@
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 menuOverlay.classList.remove('active');
+                menuToggle.classList.remove('active');
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
                 menuToggle.setAttribute('aria-label', 'Abrir menú');
                 document.body.style.overflow = '';
             });
         });
         
-        // Header scroll effect simplificado
+        // Header scroll effect mejorado
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+            }
+            
+            // Mostrar/ocultar botón de volver arriba
+            if (window.scrollY > 500) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
             }
         });
         
@@ -780,10 +1101,18 @@
             });
         });
 
+        // Botón volver arriba
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
         // Preload de imágenes críticas para mejor rendimiento
         function preloadImages() {
             const images = [
-                'img/hero-uruguay.jpg',
+                'img/hero-uruguay.webp',
                 'img/colonia.webp',
                 'img/punta-este.webp',
                 'img/montevideo.webp'
@@ -795,8 +1124,31 @@
             });
         }
 
+        // Prevenir comportamiento de arrastre en imágenes (mejora UX móvil)
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
         // Preload de imágenes después de que cargue la página principal
-        window.addEventListener('load', preloadImages);
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', preloadImages);
+        } else {
+            preloadImages();
+        }
+
+        // Mejorar rendimiento en scroll para móviles
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    // Aquí se pueden agregar efectos durante el scroll si es necesario
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
     </script>
 </body>
 </html>
