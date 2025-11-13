@@ -135,7 +135,7 @@
             min-height: 600px;
             background: 
                 linear-gradient(135deg, rgba(65, 137, 221, 0.4) 0%, rgba(255, 215, 0, 0.3) 100%),
-                url('https://images.unsplash.com/photo-1595877244574-e90ce41ce089?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
+                url('img/hero-uruguay.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -580,21 +580,21 @@
             </div>
             <div class="lugares-grid">
                 <div class="lugar-card">
-                    <div class="lugar-img" style="background-image: url('https://images.unsplash.com/photo-1595877244574-e90ce41ce089?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="lugar-img" style="background-image: url('img/colonia.webp');"></div>
                     <div class="lugar-content">
                         <h3>Colonia del Sacramento</h3>
                         <p>Ciudad histórica declarada Patrimonio de la Humanidad por la UNESCO, con calles empedradas y arquitectura colonial portuguesa y española.</p>
                     </div>
                 </div>
                 <div class="lugar-card">
-                    <div class="lugar-img" style="background-image: url('https://images.unsplash.com/photo-1629909613656-1e61d45a8d59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="lugar-img" style="background-image: url('img/punta-este.webp');"></div>
                     <div class="lugar-content">
                         <h3>Punta del Este</h3>
                         <p>Destino turístico exclusivo conocido por sus playas, vida nocturna y emblemáticos monumentos como "La Mano" y Casapueblo.</p>
                     </div>
                 </div>
                 <div class="lugar-card">
-                    <div class="lugar-img" style="background-image: url('https://images.unsplash.com/photo-1583423230902-8a6d3f283d2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="lugar-img" style="background-image: url('img/montevideo.webp');"></div>
                     <div class="lugar-content">
                         <h3>Montevideo</h3>
                         <p>La capital del país, con su Ciudad Vieja, el Mercado del Puerto y la Rambla costera de 22 km de extensión, la más larga del mundo.</p>
@@ -783,9 +783,10 @@
         // Preload de imágenes críticas para mejor rendimiento
         function preloadImages() {
             const images = [
-                'https://images.unsplash.com/photo-1595877244574-e90ce41ce089?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-                'https://images.unsplash.com/photo-1629909613656-1e61d45a8d59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-                'https://images.unsplash.com/photo-1583423230902-8a6d3f283d2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+                'img/hero-uruguay.jpg',
+                'img/colonia.webp',
+                'img/punta-este.webp',
+                'img/montevideo.webp'
             ];
             
             images.forEach(src => {
