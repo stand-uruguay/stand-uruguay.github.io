@@ -34,7 +34,7 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 14px; /* Base para rem */
+            font-size: 14px;
         }
 
         body {
@@ -55,7 +55,7 @@
             padding: 0 15px;
         }
 
-        /* Header - Mejorado para móvil */
+        /* Header */
         header {
             background: var(--blanco);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -65,7 +65,6 @@
             z-index: 1000;
             transition: var(--transition);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         header.scrolled {
@@ -97,17 +96,16 @@
             z-index: 1002;
         }
 
-        .logo:hover, .logo:active {
+        .logo:hover {
             transform: scale(1.05);
         }
 
         .logo i {
             color: var(--dorado);
             font-size: 1.6rem;
-            transition: var(--transition);
         }
 
-        /* NAV LINKS - Mejorado para móvil */
+        /* NAV LINKS */
         .nav-links {
             display: flex;
             position: fixed;
@@ -164,8 +162,7 @@
             transition: left 0.6s ease;
         }
 
-        .nav-links a:hover::before,
-        .nav-links a:active::before {
+        .nav-links a:hover::before {
             left: 100%;
         }
 
@@ -183,8 +180,7 @@
             transform: translateX(8px);
         }
 
-        .nav-links a:hover i,
-        .nav-links a:active i {
+        .nav-links a:hover i {
             color: var(--dorado);
             transform: scale(1.2);
         }
@@ -203,7 +199,6 @@
             z-index: 1001;
             border-radius: 50%;
             transition: var(--transition);
-            position: relative;
         }
 
         .menu-toggle:active {
@@ -215,7 +210,6 @@
             color: var(--celeste-oscuro);
         }
 
-        /* Overlay para el menú móvil */
         .menu-overlay {
             position: fixed;
             top: 0;
@@ -228,7 +222,6 @@
             visibility: hidden;
             transition: var(--transition);
             backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
         }
 
         .menu-overlay.active {
@@ -236,17 +229,17 @@
             visibility: visible;
         }
 
-        /* Hero Section - Mejorado para móvil */
+        /* Hero Section */
         .hero {
             height: 100vh;
             min-height: 600px;
             max-height: 900px;
             background: 
                 linear-gradient(135deg, rgba(65, 137, 221, 0.4) 0%, rgba(255, 215, 0, 0.3) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%234189DD"/><circle cx="400" cy="300" r="150" fill="%23FFD700" opacity="0.3"/></svg>');
+                url('img/hero-bg.webp');
             background-size: cover;
             background-position: center;
-            background-attachment: scroll; /* Cambiado para mejor rendimiento móvil */
+            background-attachment: scroll;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -333,8 +326,7 @@
             transition: left 0.6s ease;
         }
 
-        .btn:hover::after,
-        .btn:active::after {
+        .btn:hover::after {
             left: 100%;
         }
 
@@ -345,10 +337,9 @@
 
         .btn:active {
             transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.7);
         }
 
-        /* Secciones - Mejorado para móvil */
+        /* Secciones */
         section {
             padding: 70px 0;
             position: relative;
@@ -381,7 +372,7 @@
             border-radius: 10px;
         }
 
-        /* Lugares Turísticos - Mejorado para móvil */
+        /* Lugares Turísticos */
         .lugares-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -416,15 +407,13 @@
         }
 
         .lugar-img::before {
-            content: 'Imagen no disponible';
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #666;
-            font-size: 0.9rem;
-            text-align: center;
-            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.1));
         }
 
         .lugar-card:hover .lugar-img {
@@ -454,7 +443,7 @@
             flex-grow: 1;
         }
 
-        /* Cultura - Mejorado para móvil */
+        /* Cultura */
         .cultura {
             background: linear-gradient(135deg, var(--gris) 0%, #e8ecf1 100%);
         }
@@ -538,7 +527,7 @@
             color: #666;
         }
 
-        /* Mapa - Mejorado para móvil */
+        /* Mapa */
         .mapa-container {
             border-radius: 16px;
             overflow: hidden;
@@ -553,7 +542,7 @@
             border: none;
         }
 
-        /* Curiosidades - Mejorado para móvil */
+        /* Curiosidades */
         .curiosidades {
             background: linear-gradient(135deg, #e8ecf1 0%, var(--gris) 100%);
         }
@@ -626,7 +615,7 @@
             z-index: 2;
         }
 
-        /* PROMO XXV Section - Mejorado para móvil */
+        /* PROMO XXV Section */
         .promo-section {
             background: linear-gradient(135deg, var(--celeste-claro) 0%, var(--celeste-oscuro) 100%);
             color: var(--blanco);
@@ -745,7 +734,7 @@
             font-size: 1.3rem;
         }
 
-        /* Footer - Mejorado para móvil */
+        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--gris-oscuro) 0%, #1a2530 100%);
             color: var(--blanco);
@@ -830,7 +819,6 @@
             margin-top: 12px;
         }
 
-        /* Decoración del footer */
         .footer-decoration {
             position: absolute;
             bottom: 0;
@@ -844,14 +832,12 @@
             opacity: 0.3;
         }
 
-        /* Optimizaciones de rendimiento */
         .performance-optimized {
             will-change: transform;
             backface-visibility: hidden;
             transform: translateZ(0);
         }
 
-        /* Estados de carga */
         .loading {
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -861,7 +847,7 @@
             opacity: 1;
         }
 
-        /* ========== MEDIA QUERIES MEJORADAS ========== */
+        /* ========== MEDIA QUERIES ========== */
 
         /* Móviles pequeños (hasta 360px) */
         @media (max-width: 360px) {
@@ -1010,6 +996,7 @@
             
             .hero {
                 min-height: 700px;
+                background-attachment: fixed;
             }
             
             .hero h1 {
@@ -1048,7 +1035,6 @@
                 font-size: 3rem;
             }
 
-            /* NAV LINKS PARA TABLET - CORREGIDO */
             .nav-links {
                 position: static;
                 width: auto;
@@ -1081,13 +1067,11 @@
                 transition: width 0.3s ease;
             }
 
-            .nav-links a:hover::after,
-            .nav-links a:active::after {
+            .nav-links a:hover::after {
                 width: 100%;
             }
 
-            .nav-links a:hover,
-            .nav-links a:active {
+            .nav-links a:hover {
                 transform: translateY(-3px);
                 color: var(--celeste-oscuro);
             }
@@ -1189,7 +1173,6 @@
                 font-size: 4rem;
             }
 
-            /* NAV LINKS PARA DESKTOP - CORREGIDO */
             .nav-links {
                 position: static;
                 width: auto;
@@ -1223,13 +1206,11 @@
                 transition: width 0.4s ease;
             }
 
-            .nav-links a:hover::after,
-            .nav-links a:active::after {
+            .nav-links a:hover::after {
                 width: 100%;
             }
 
-            .nav-links a:hover,
-            .nav-links a:active {
+            .nav-links a:hover {
                 transform: translateY(-5px);
                 color: var(--celeste-oscuro);
             }
@@ -1295,34 +1276,9 @@
             }
         }
 
-        /* Prevención de zoom en inputs en iOS */
         @media screen and (max-width: 768px) {
             input, select, textarea {
                 font-size: 16px !important;
-            }
-        }
-
-        /* Mejoras de accesibilidad para modo alto contraste */
-        @media (prefers-contrast: high) {
-            .btn, .instagram-link {
-                border: 2px solid currentColor;
-            }
-            
-            .lugar-card, .cultura-icon, .curiosidad-card, .promo-item {
-                border: 1px solid var(--gris-oscuro);
-            }
-        }
-
-        /* Mejoras para reducir movimiento */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-            
-            .hero-content {
-                animation: none;
             }
         }
     </style>
@@ -1369,21 +1325,21 @@
             </div>
             <div class="lugares-grid">
                 <div class="lugar-card performance-optimized">
-                    <div class="lugar-img" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"300\" viewBox=\"0 0 400 300\"><rect width=\"400\" height=\"300\" fill=\"%236CAEF5\"/><text x=\"200\" y=\"150\" text-anchor=\"middle\" fill=\"%232A5F9E\" font-family=\"Arial\" font-size=\"24\">Colonia del Sacramento</text></svg>');" role="img" aria-label="Vista de Colonia del Sacramento"></div>
+                    <div class="lugar-img" style="background-image: url('img/colonia.webp');" role="img" aria-label="Vista de Colonia del Sacramento"></div>
                     <div class="lugar-content">
                         <h3>Colonia del Sacramento</h3>
                         <p>Ciudad histórica declarada Patrimonio de la Humanidad por la UNESCO, con calles empedradas y arquitectura colonial portuguesa y española. Un viaje en el tiempo que te transportará a la época colonial.</p>
                     </div>
                 </div>
                 <div class="lugar-card performance-optimized">
-                    <div class="lugar-img" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"300\" viewBox=\"0 0 400 300\"><rect width=\"400\" height=\"300\" fill=\"%236CAEF5\"/><text x=\"200\" y=\"150\" text-anchor=\"middle\" fill=\"%232A5F9E\" font-family=\"Arial\" font-size=\"24\">Punta del Este</text></svg>');" role="img" aria-label="Vista de Punta del Este"></div>
+                    <div class="lugar-img" style="background-image: url('img/punta-del-este.webp');" role="img" aria-label="Vista de Punta del Este"></div>
                     <div class="lugar-content">
                         <h3>Punta del Este</h3>
                         <p>Destino turístico exclusivo conocido por sus playas, vida nocturna y emblemáticos monumentos como "La Mano" y Casapueblo. El balneario más famoso de Sudamérica.</p>
                     </div>
                 </div>
                 <div class="lugar-card performance-optimized">
-                    <div class="lugar-img" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"300\" viewBox=\"0 0 400 300\"><rect width=\"400\" height=\"300\" fill=\"%236CAEF5\"/><text x=\"200\" y=\"150\" text-anchor=\"middle\" fill=\"%232A5F9E\" font-family=\"Arial\" font-size=\"24\">Montevideo</text></svg>');" role="img" aria-label="Vista de Montevideo"></div>
+                    <div class="lugar-img" style="background-image: url('img/montevideo.webp');" role="img" aria-label="Vista de Montevideo"></div>
                     <div class="lugar-content">
                         <h3>Montevideo</h3>
                         <p>La capital del país, con su Ciudad Vieja, el Mercado del Puerto y la Rambla costera de 22 km de extensión, la más larga del mundo. Una ciudad que combina historia y modernidad.</p>
@@ -1548,7 +1504,7 @@
         const menuOverlay = document.getElementById('menuOverlay');
         const header = document.getElementById('header');
 
-        // Función optimizada para toggle del menú
+        // Función para toggle del menú
         function toggleMenu() {
             appState.isMenuOpen = !appState.isMenuOpen;
             
@@ -1595,7 +1551,7 @@
             }
         }
 
-        // Header scroll effect optimizado
+        // Header scroll effect
         function initHeaderScroll() {
             if (header) {
                 let ticking = false;
@@ -1620,13 +1576,12 @@
             }
         }
 
-        // Smooth scrolling optimizado - CORREGIDO
+        // Smooth scrolling
         function initSmoothScrolling() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
                     
-                    // Solo procesar enlaces internos que no sean solo "#"
                     if (href === '#' || href === '#!') return;
                     
                     e.preventDefault();
@@ -1645,13 +1600,16 @@
             });
         }
 
-        // Preload de imágenes críticas
-        function preloadCriticalImages() {
-            const criticalImages = [
-                'img/hero-bg.webp'
+        // Preload de imágenes
+        function preloadImages() {
+            const images = [
+                'img/hero-bg.webp',
+                'img/colonia.webp',
+                'img/punta-del-este.webp',
+                'img/montevideo.webp'
             ];
             
-            criticalImages.forEach(src => {
+            images.forEach(src => {
                 const img = new Image();
                 img.src = src;
             });
@@ -1664,48 +1622,17 @@
             }
         }
 
-        // Prevenir comportamiento de arrastre en imágenes (mejora UX móvil)
-        function preventImageDrag() {
-            document.addEventListener('dragstart', function(e) {
-                if (e.target.tagName === 'IMG') {
-                    e.preventDefault();
-                }
-            });
-        }
-
-        // Mejorar rendimiento en dispositivos táctiles
-        function improveTouchPerformance() {
-            // Prevenir zoom en doble tap
-            let lastTouchEnd = 0;
-            document.addEventListener('touchend', function (event) {
-                const now = (new Date()).getTime();
-                if (now - lastTouchEnd <= 300) {
-                    event.preventDefault();
-                }
-                lastTouchEnd = now;
-            }, false);
-            
-            // Mejorar respuesta táctil
-            document.addEventListener('touchstart', function() {}, {passive: true});
-        }
-
         // Inicializar todas las funcionalidades
         function init() {
             initMenu();
             initHeaderScroll();
             initSmoothScrolling();
-            preloadCriticalImages();
-            preventImageDrag();
-            improveTouchPerformance();
+            preloadImages();
             
-            // Event listeners adicionales
             window.addEventListener('resize', handleResize);
             
-            // Agregar clase de carga inicial para transiciones suaves
             window.addEventListener('load', function() {
                 document.body.classList.add('loaded');
-                
-                // Restaurar posición del body después de cargar
                 document.body.style.position = '';
             });
         }
