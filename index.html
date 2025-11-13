@@ -47,15 +47,15 @@
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
-        /* Header optimizado para móviles - MEJORADO */
+        /* Header */
         header {
             background: var(--blanco);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -66,44 +66,44 @@
         }
 
         header.scrolled {
-            padding: 5px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+            padding: 0;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 20px 0;
             transition: var(--transition);
         }
 
         header.scrolled .navbar {
-            padding: 10px 0;
+            padding: 12px 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1.4rem;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.6rem;
             color: var(--celeste);
             text-decoration: none;
             transition: var(--transition);
         }
 
-        .logo:active {
-            transform: scale(0.95);
+        .logo:hover, .logo:active {
+            transform: scale(1.05);
         }
 
         .logo i {
             color: var(--dorado);
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             transition: var(--transition);
         }
 
-        /* NAV LINKS MEJORADO - Menú móvil premium */
+        /* NAV LINKS */
         .nav-links {
             display: flex;
             position: fixed;
@@ -116,11 +116,11 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            padding-top: 80px;
+            padding-top: 100px;
             padding-left: 30px;
             gap: 0;
             transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 8px 0 30px rgba(0, 0, 0, 0.2);
             z-index: 999;
             overflow-y: auto;
         }
@@ -133,14 +133,14 @@
             text-decoration: none;
             color: var(--gris-oscuro);
             font-weight: 600;
-            font-size: 1.2rem;
-            padding: 18px 0;
+            font-size: 1.3rem;
+            padding: 20px 0;
             width: 100%;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             position: relative;
             overflow: hidden;
         }
@@ -166,9 +166,9 @@
         }
 
         .nav-links a i {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--celeste);
-            width: 24px;
+            width: 28px;
             text-align: center;
             transition: var(--transition);
         }
@@ -176,7 +176,7 @@
         .nav-links a:hover,
         .nav-links a:active {
             color: var(--celeste);
-            transform: translateX(5px);
+            transform: translateX(8px);
         }
 
         .nav-links a:hover i,
@@ -189,9 +189,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 44px;
-            height: 44px;
-            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            font-size: 1.6rem;
             cursor: pointer;
             color: var(--celeste);
             background: none;
@@ -203,7 +203,7 @@
         }
 
         .menu-toggle:active {
-            background-color: rgba(65, 137, 221, 0.1);
+            background-color: rgba(65, 137, 221, 0.15);
             transform: scale(0.92);
         }
 
@@ -211,20 +211,20 @@
             color: var(--celeste-oscuro);
         }
 
-        /* Overlay para el menú móvil - MEJORADO */
+        /* Overlay para el menú móvil */
         .menu-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 998;
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
 
         .menu-overlay.active {
@@ -232,15 +232,16 @@
             visibility: visible;
         }
 
-        /* Hero Section optimizada para móviles - MEJORADA */
+        /* Hero Section */
         .hero {
             height: 100vh;
-            min-height: 600px;
+            min-height: 700px;
             background: 
                 linear-gradient(135deg, rgba(65, 137, 221, 0.4) 0%, rgba(255, 215, 0, 0.3) 100%),
-                url('img/hero-uruguay.webp');
+                url('img/hero-bg.webp');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -248,6 +249,7 @@
             color: var(--blanco);
             padding: 0 20px;
             position: relative;
+            overflow: hidden;
         }
 
         .hero::before {
@@ -257,21 +259,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(42, 95, 158, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+            background: linear-gradient(135deg, rgba(42, 95, 158, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%);
             z-index: 1;
         }
 
         .hero-content {
-            max-width: 100%;
+            max-width: 900px;
             position: relative;
             z-index: 2;
-            animation: fadeInUp 0.8s ease-out;
+            animation: fadeInUp 1s ease-out;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -280,35 +282,37 @@
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+            font-weight: 800;
             color: var(--blanco);
-            line-height: 1.2;
+            line-height: 1.1;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
             font-weight: 500;
             line-height: 1.4;
         }
 
         .btn {
             display: inline-block;
-            padding: 16px 34px;
+            padding: 18px 40px;
             background: linear-gradient(135deg, var(--dorado), var(--dorado-oscuro));
             color: var(--gris-oscuro);
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
             position: relative;
             overflow: hidden;
+            border: none;
+            cursor: pointer;
         }
 
         .btn::after {
@@ -319,7 +323,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.5s ease;
+            transition: left 0.6s ease;
         }
 
         .btn:hover::after,
@@ -327,114 +331,110 @@
             left: 100%;
         }
 
-        .btn:active {
-            transform: scale(0.96);
-            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.6);
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
         }
 
-        /* Secciones optimizadas - MEJORADAS */
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.7);
+        }
+
+        /* Secciones */
         section {
-            padding: 70px 0;
+            padding: 100px 0;
             position: relative;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             position: relative;
         }
 
         .section-title h2 {
-            font-size: 2rem;
+            font-size: 2.8rem;
             color: var(--celeste-oscuro);
-            font-weight: 700;
+            font-weight: 800;
             position: relative;
             display: inline-block;
+            padding-bottom: 15px;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 80px;
-            height: 4px;
+            width: 120px;
+            height: 5px;
             background: linear-gradient(90deg, var(--celeste), var(--dorado));
-            bottom: -12px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             border-radius: 10px;
         }
 
-        /* Lugares Turísticos optimizados para móviles - MEJORADOS */
+        /* Lugares Turísticos */
         .lugares-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
 
         .lugar-card {
             background-color: var(--blanco);
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--sombra);
             transition: var(--transition);
             position: relative;
-        }
-
-        .lugar-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.3));
-            z-index: 1;
-            opacity: 0;
-            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
 
-        .lugar-card:hover::before,
-        .lugar-card:active::before {
-            opacity: 1;
-        }
-
-        .lugar-card:active {
-            transform: scale(0.99);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        .lugar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-hover);
         }
 
         .lugar-img {
-            height: 200px;
+            height: 280px;
             width: 100%;
             background-size: cover;
             background-position: center;
             transition: var(--transition);
+            background-color: #e0e0e0;
         }
 
-        .lugar-card:active .lugar-img {
+        .lugar-card:hover .lugar-img {
             transform: scale(1.05);
         }
 
         .lugar-content {
-            padding: 20px;
+            padding: 30px;
             position: relative;
             z-index: 2;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .lugar-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
             color: var(--celeste-oscuro);
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .lugar-content p {
             color: #555;
-            font-size: 1rem;
-            line-height: 1.5;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            flex-grow: 1;
         }
 
-        /* Cultura optimizada para móviles - MEJORADA */
+        /* Cultura */
         .cultura {
             background: linear-gradient(135deg, var(--gris) 0%, #e8ecf1 100%);
         }
@@ -442,30 +442,39 @@
         .cultura-content {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 50px;
+        }
+
+        .cultura-text {
+            flex: 1;
         }
 
         .cultura-text p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            line-height: 1.7;
         }
 
         .cultura-icons {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 25px;
         }
 
         .cultura-icon {
             text-align: center;
-            padding: 20px 15px;
+            padding: 30px 20px;
             background-color: var(--blanco);
-            border-radius: 12px;
+            border-radius: 15px;
             box-shadow: var(--sombra);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+        }
+
+        .cultura-icon:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-hover);
         }
 
         .cultura-icon::before {
@@ -474,53 +483,47 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(90deg, var(--celeste), var(--dorado));
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
-        .cultura-icon:hover::before,
-        .cultura-icon:active::before {
+        .cultura-icon:hover::before {
             transform: scaleX(1);
         }
 
-        .cultura-icon:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
         .cultura-icon i {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             color: var(--celeste);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             transition: var(--transition);
         }
 
-        .cultura-icon:active i {
-            transform: scale(1.1);
+        .cultura-icon:hover i {
+            transform: scale(1.2);
             color: var(--dorado);
         }
 
         .cultura-icon h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
             color: var(--celeste-oscuro);
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .cultura-icon p {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #666;
         }
 
-        /* Mapa optimizado para móviles - MEJORADO */
+        /* Mapa */
         .mapa-container {
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--sombra-hover);
-            height: 350px;
+            height: 500px;
             position: relative;
         }
 
@@ -530,26 +533,31 @@
             border: none;
         }
 
-        /* Curiosidades optimizadas para móviles - MEJORADAS */
+        /* Curiosidades */
         .curiosidades {
             background: linear-gradient(135deg, #e8ecf1 0%, var(--gris) 100%);
         }
 
         .curiosidades-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
 
         .curiosidad-card {
             background-color: var(--blanco);
-            padding: 25px 20px;
-            border-radius: 15px;
+            padding: 40px 30px;
+            border-radius: 20px;
             box-shadow: var(--sombra);
             text-align: center;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+        }
+
+        .curiosidad-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-hover);
         }
 
         .curiosidad-card::before {
@@ -564,53 +572,167 @@
             transition: var(--transition);
         }
 
-        .curiosidad-card:hover::before,
-        .curiosidad-card:active::before {
+        .curiosidad-card:hover::before {
             opacity: 1;
         }
 
-        .curiosidad-card:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
         .curiosidad-card i {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             color: var(--dorado);
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             transition: var(--transition);
             position: relative;
             z-index: 2;
         }
 
-        .curiosidad-card:active i {
-            transform: scale(1.1) rotate(5deg);
+        .curiosidad-card:hover i {
+            transform: scale(1.2) rotate(5deg);
         }
 
         .curiosidad-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+            font-size: 1.7rem;
+            margin-bottom: 20px;
             color: var(--celeste-oscuro);
-            font-weight: 600;
+            font-weight: 700;
             position: relative;
             z-index: 2;
         }
 
         .curiosidad-card p {
             color: #555;
-            font-size: 1rem;
-            line-height: 1.5;
+            font-size: 1.1rem;
+            line-height: 1.6;
             position: relative;
             z-index: 2;
         }
 
-        /* Footer optimizado para móviles - MEJORADO */
+        /* PROMO XXV Section */
+        .promo-section {
+            background: linear-gradient(135deg, var(--celeste-claro) 0%, var(--celeste-oscuro) 100%);
+            color: var(--blanco);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .promo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .promo-title {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: var(--blanco);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .promo-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .promo-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            flex: 0 1 300px;
+            max-width: 350px;
+        }
+
+        .promo-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .promo-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dorado);
+            font-weight: 700;
+        }
+
+        .promo-item p {
+            font-size: 1.2rem;
+            color: var(--blanco);
+            line-height: 1.5;
+        }
+
+        .promo-description {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .instagram-section {
+            margin: 30px 0;
+            padding: 30px;
+            background: linear-gradient(45deg, rgba(225, 48, 108, 0.2), rgba(253, 29, 29, 0.2), rgba(255, 159, 28, 0.2));
+            border-radius: 20px;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .instagram-title {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--blanco);
+            font-weight: 600;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #E1306C, #F77737, #FCAF45);
+            color: var(--blanco);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+        }
+
+        .instagram-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(225, 48, 108, 0.6);
+        }
+
+        .instagram-link:active {
+            transform: translateY(-1px);
+        }
+
+        .instagram-link i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--gris-oscuro) 0%, #1a2530 100%);
             color: var(--blanco);
-            padding: 40px 0 20px;
+            padding: 80px 0 40px;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         footer::before {
@@ -619,7 +741,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(90deg, var(--celeste), var(--dorado));
         }
 
@@ -627,65 +749,119 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
         }
 
         .footer-logo {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 12px;
-            font-size: 1.5rem;
-            font-weight: 700;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo-icon {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 2.2rem;
+            font-weight: 800;
             transition: var(--transition);
         }
 
-        .footer-logo:active {
-            transform: scale(0.95);
+        .footer-logo-icon:hover {
+            transform: scale(1.05);
         }
 
-        .footer-logo i {
+        .footer-logo-icon i {
             color: var(--dorado);
-            font-size: 1.6rem;
+            font-size: 2.5rem;
+        }
+
+        .footer-tagline {
+            font-size: 1.4rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--blanco);
+            font-weight: 500;
+            line-height: 1.5;
         }
 
         .creditos {
-            margin-top: 20px;
-            font-size: 0.9rem;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .creditos p {
+            font-size: 1.1rem;
             color: #aaa;
-            max-width: 100%;
+            margin-bottom: 10px;
         }
 
-        /* Mejoras para tablets pequeñas */
+        .creditos .fiesta-tradicion {
+            font-size: 1.3rem;
+            color: var(--dorado);
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        /* Decoración del footer */
+        .footer-decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%234189DD"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%234189DD"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%234189DD"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        /* Optimizaciones de rendimiento */
+        .performance-optimized {
+            will-change: transform;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        /* Estados de carga */
+        .loading {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .loaded {
+            opacity: 1;
+        }
+
+        /* Imágenes optimizadas */
+        .lugar-img {
+            background-color: #e0e0e0;
+            position: relative;
+        }
+
+        .lugar-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            z-index: -1;
+        }
+
+        /* ========== MEDIA QUERIES ========== */
+
+        /* Tabletas pequeñas (481px - 768px) */
         @media (min-width: 481px) and (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero p {
-                font-size: 1.3rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .cultura-icons {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .lugares-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-        }
-
-        /* Mejoras para tablets grandes y desktop */
-        @media (min-width: 769px) {
-            .container {
-                width: 85%;
-            }
-            
             .hero h1 {
                 font-size: 3rem;
             }
@@ -698,9 +874,54 @@
                 font-size: 2.5rem;
             }
             
+            .cultura-icons {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .lugares-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .curiosidades-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .promo-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .promo-item {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .promo-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* Tabletas grandes (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                width: 90%;
+            }
+            
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .hero p {
+                font-size: 1.6rem;
+            }
+            
+            .section-title h2 {
+                font-size: 3rem;
+            }
+            
             .cultura-content {
                 flex-direction: row;
-                gap: 40px;
+                gap: 50px;
             }
             
             .cultura-icons {
@@ -708,18 +929,18 @@
             }
             
             .lugares-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 25px;
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .curiosidades-grid {
-                display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
             }
 
-            /* NAV LINKS PARA DESKTOP - MEJORADO */
+            .promo-title {
+                font-size: 3rem;
+            }
+
+            /* NAV LINKS PARA TABLET */
             .nav-links {
                 position: static;
                 width: auto;
@@ -727,17 +948,17 @@
                 flex-direction: row;
                 background: none;
                 box-shadow: none;
-                gap: 25px;
+                gap: 30px;
                 padding: 0;
                 max-width: none;
                 overflow: visible;
             }
 
             .nav-links a {
-                padding: 8px 0;
+                padding: 10px 0;
                 border-bottom: none;
                 width: auto;
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .nav-links a::after {
@@ -746,7 +967,7 @@
                 bottom: 0;
                 left: 0;
                 width: 0;
-                height: 2px;
+                height: 3px;
                 background: var(--dorado);
                 transition: width 0.3s ease;
             }
@@ -758,7 +979,7 @@
 
             .nav-links a:hover,
             .nav-links a:active {
-                transform: translateY(-2px);
+                transform: translateY(-3px);
             }
 
             .nav-links a i {
@@ -774,19 +995,182 @@
             }
         }
 
-        /* Optimización para pantallas muy pequeñas */
-        @media (max-width: 360px) {
+        /* Desktop (1025px en adelante) */
+        @media (min-width: 1025px) {
+            .container {
+                width: 85%;
+                max-width: 1400px;
+            }
+            
+            .hero {
+                min-height: 800px;
+            }
+            
             .hero h1 {
-                font-size: 2rem;
+                font-size: 5rem;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.8rem;
+                margin-bottom: 50px;
             }
             
             .btn {
-                padding: 14px 28px;
-                font-size: 0.95rem;
+                padding: 20px 50px;
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 3.5rem;
+            }
+            
+            .cultura-content {
+                flex-direction: row;
+                gap: 60px;
+                align-items: flex-start;
+            }
+            
+            .cultura-text {
+                flex: 1;
+            }
+            
+            .cultura-icons {
+                flex: 1;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .cultura-icon {
+                padding: 35px 25px;
+            }
+            
+            .lugares-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+            
+            .lugar-card {
+                min-height: 550px;
+            }
+            
+            .lugar-img {
+                height: 320px;
+            }
+            
+            .curiosidades-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .curiosidad-card {
+                padding: 50px 40px;
+                min-height: 350px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .promo-title {
+                font-size: 4rem;
+            }
+
+            /* NAV LINKS PARA DESKTOP */
+            .nav-links {
+                position: static;
+                width: auto;
+                height: auto;
+                flex-direction: row;
+                background: none;
+                box-shadow: none;
+                gap: 40px;
+                padding: 0;
+                max-width: none;
+                overflow: visible;
+            }
+
+            .nav-links a {
+                padding: 12px 0;
+                border-bottom: none;
+                width: auto;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background: var(--dorado);
+                transition: width 0.4s ease;
+            }
+
+            .nav-links a:hover::after,
+            .nav-links a:active::after {
+                width: 100%;
+            }
+
+            .nav-links a:hover,
+            .nav-links a:active {
+                transform: translateY(-5px);
+                color: var(--celeste-oscuro);
+            }
+
+            .nav-links a i {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .menu-overlay {
+                display: none;
+            }
+        }
+
+        /* Pantallas muy grandes (1400px en adelante) */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1600px;
+            }
+            
+            .hero h1 {
+                font-size: 5.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 4rem;
+            }
+            
+            .lugares-grid {
+                gap: 50px;
+            }
+            
+            .cultura-content {
+                gap: 80px;
+            }
+
+            .promo-title {
+                font-size: 4.5rem;
+            }
+        }
+
+        /* Optimización para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 16px 35px;
+                font-size: 1rem;
             }
             
             .cultura-icons {
@@ -794,12 +1178,57 @@
             }
             
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
             
             .nav-links {
-                width: 80%;
-                padding-left: 20px;
+                width: 85%;
+                padding-left: 25px;
+            }
+            
+            .lugar-content, .curiosidad-card {
+                padding: 25px 20px;
+            }
+            
+            .footer-logo-icon {
+                font-size: 1.8rem;
+            }
+            
+            .footer-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .promo-title {
+                font-size: 2.2rem;
+            }
+            
+            .promo-item {
+                padding: 20px 15px;
+            }
+            
+            .promo-item h3 {
+                font-size: 1.5rem;
+            }
+            
+            .promo-item p {
+                font-size: 1rem;
+            }
+            
+            .promo-description {
+                font-size: 1.1rem;
+            }
+            
+            .instagram-section {
+                padding: 20px;
+            }
+            
+            .instagram-title {
+                font-size: 1.4rem;
+            }
+            
+            .instagram-link {
+                padding: 12px 25px;
+                font-size: 1.1rem;
             }
         }
 
@@ -820,15 +1249,16 @@
                     <i class="fas fa-flag"></i>
                     <span>Descubrí Uruguay</span>
                 </a>
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="nav-links" id="navLinks">
-                    <a href="#inicio"><i class="fas fa-home"></i>Inicio</a>
-                    <a href="#lugares"><i class="fas fa-map-marked-alt"></i>Lugares</a>
-                    <a href="#cultura"><i class="fas fa-music"></i>Cultura</a>
-                    <a href="#mapa"><i class="fas fa-map"></i>Mapa</a>
-                    <a href="#curiosidades"><i class="fas fa-lightbulb"></i>Curiosidades</a>
+                <div class="nav-links" id="navLinks" role="navigation" aria-label="Menú principal">
+                    <a href="#inicio" role="menuitem"><i class="fas fa-home"></i>Inicio</a>
+                    <a href="#lugares" role="menuitem"><i class="fas fa-map-marked-alt"></i>Lugares</a>
+                    <a href="#cultura" role="menuitem"><i class="fas fa-music"></i>Cultura</a>
+                    <a href="#mapa" role="menuitem"><i class="fas fa-map"></i>Mapa</a>
+                    <a href="#curiosidades" role="menuitem"><i class="fas fa-lightbulb"></i>Curiosidades</a>
+                    <a href="#promo" role="menuitem"><i class="fas fa-users"></i>PROMO XXV</a>
                 </div>
             </nav>
         </div>
@@ -851,25 +1281,25 @@
                 <h2>Lugares Turísticos Destacados</h2>
             </div>
             <div class="lugares-grid">
-                <div class="lugar-card">
-                    <div class="lugar-img" style="background-image: url('img/colonia.webp');"></div>
+                <div class="lugar-card performance-optimized">
+                    <div class="lugar-img" style="background-image: url('img/colonia.webp');" role="img" aria-label="Vista de Colonia del Sacramento"></div>
                     <div class="lugar-content">
                         <h3>Colonia del Sacramento</h3>
-                        <p>Ciudad histórica declarada Patrimonio de la Humanidad por la UNESCO, con calles empedradas y arquitectura colonial portuguesa y española.</p>
+                        <p>Ciudad histórica declarada Patrimonio de la Humanidad por la UNESCO, con calles empedradas y arquitectura colonial portuguesa y española. Un viaje en el tiempo que te transportará a la época colonial.</p>
                     </div>
                 </div>
-                <div class="lugar-card">
-                    <div class="lugar-img" style="background-image: url('img/punta-este.webp');"></div>
+                <div class="lugar-card performance-optimized">
+                    <div class="lugar-img" style="background-image: url('img/punta-del-este.webp');" role="img" aria-label="Vista de Punta del Este"></div>
                     <div class="lugar-content">
                         <h3>Punta del Este</h3>
-                        <p>Destino turístico exclusivo conocido por sus playas, vida nocturna y emblemáticos monumentos como "La Mano" y Casapueblo.</p>
+                        <p>Destino turístico exclusivo conocido por sus playas, vida nocturna y emblemáticos monumentos como "La Mano" y Casapueblo. El balneario más famoso de Sudamérica.</p>
                     </div>
                 </div>
-                <div class="lugar-card">
-                    <div class="lugar-img" style="background-image: url('img/montevideo.webp');"></div>
+                <div class="lugar-card performance-optimized">
+                    <div class="lugar-img" style="background-image: url('img/montevideo.webp');" role="img" aria-label="Vista de Montevideo"></div>
                     <div class="lugar-content">
                         <h3>Montevideo</h3>
-                        <p>La capital del país, con su Ciudad Vieja, el Mercado del Puerto y la Rambla costera de 22 km de extensión, la más larga del mundo.</p>
+                        <p>La capital del país, con su Ciudad Vieja, el Mercado del Puerto y la Rambla costera de 22 km de extensión, la más larga del mundo. Una ciudad que combina historia y modernidad.</p>
                     </div>
                 </div>
             </div>
@@ -890,32 +1320,32 @@
                     <p>El <strong>chivito</strong> es el plato nacional uruguayo, una creación culinaria única que consiste en un sándwich de carne de res con diversos ingredientes, reconocido internacionalmente.</p>
                 </div>
                 <div class="cultura-icons">
-                    <div class="cultura-icon">
+                    <div class="cultura-icon performance-optimized">
                         <i class="fas fa-drum"></i>
                         <h4>Candombe</h4>
                         <p>Patrimonio UNESCO</p>
                     </div>
-                    <div class="cultura-icon">
+                    <div class="cultura-icon performance-optimized">
                         <i class="fas fa-mask"></i>
                         <h4>Murga</h4>
                         <p>Arte único</p>
                     </div>
-                    <div class="cultura-icon">
+                    <div class="cultura-icon performance-optimized">
                         <i class="fas fa-utensils"></i>
                         <h4>Chivito</h4>
                         <p>Plato nacional</p>
                     </div>
-                    <div class="cultura-icon">
+                    <div class="cultura-icon performance-optimized">
                         <i class="fas fa-wine-bottle"></i>
                         <h4>Tannat</h4>
                         <p>Vino emblemático</p>
                     </div>
-                    <div class="cultura-icon">
+                    <div class="cultura-icon performance-optimized">
                         <i class="fas fa-gem"></i>
                         <h4>Amatistas</h4>
                         <p>Piedra nacional</p>
                     </div>
-                    <div class="cultura-icon">
+                    <div class="cultura-icon performance-optimized">
                         <i class="fas fa-tree"></i>
                         <h4>Ombú</h4>
                         <p>Árbol emblemático</p>
@@ -932,7 +1362,7 @@
                 <h2>Mapa de Uruguay</h2>
             </div>
             <div class="mapa-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406913.756772622!2d-58.4543535671875!3d-33.01846899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9576081a3f5ad9fd%3A0x9e7d38b2038b9f2c!2sUruguay!5e0!3m2!1ses-419!2sar!4v1687897890123!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406913.756772622!2d-58.4543535671875!3d-33.01846899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9576081a3f5ad9fd%3A0x9e7d38b2038b9f2c!2sUruguay!5e0!3m2!1ses-419!2sar!4v1687897890123!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Uruguay"></iframe>
             </div>
         </div>
     </section>
@@ -944,22 +1374,22 @@
                 <h2>Curiosidades Uruguayas</h2>
             </div>
             <div class="curiosidades-grid">
-                <div class="curiosidad-card">
+                <div class="curiosidad-card performance-optimized">
                     <i class="fas fa-award"></i>
                     <h3>Primer Mundial de Fútbol</h3>
                     <p>Uruguay organizó y ganó la primera Copa Mundial de Fútbol en 1930, siendo el primer campeón mundial de la historia.</p>
                 </div>
-                <div class="curiosidad-card">
+                <div class="curiosidad-card performance-optimized">
                     <i class="fas fa-leaf"></i>
                     <h3>Líder en Energía Renovable</h3>
                     <p>Más del 95% de la electricidad de Uruguay proviene de fuentes renovables, siendo referente mundial en energía eólica.</p>
                 </div>
-                <div class="curiosidad-card">
+                <div class="curiosidad-card performance-optimized">
                     <i class="fas fa-book"></i>
                     <h3>Plan Ceibal</h3>
                     <p>Uruguay fue el primer país del mundo en proporcionar una computadora portátil a cada niño en edad escolar primaria.</p>
                 </div>
-                <div class="curiosidad-card">
+                <div class="curiosidad-card performance-optimized">
                     <i class="fas fa-peace"></i>
                     <h3>País más pacífico</h3>
                     <p>Uruguay es considerado el país más pacífico de América Latina según el Índice Global de Paz.</p>
@@ -968,132 +1398,245 @@
         </div>
     </section>
 
+    <!-- PROMO XXV Section -->
+    <section id="promo" class="promo-section">
+        <div class="container">
+            <div class="promo-content">
+                <h2 class="promo-title">PROMO XXV</h2>
+                <p class="promo-description">Generación 2025 - 5to B Orientación Comunicación</p>
+                
+                <div class="promo-info">
+                    <div class="promo-item performance-optimized">
+                        <h3>5to B</h3>
+                        <p>Generación 2025 - Promo XXV</p>
+                    </div>
+                    <div class="promo-item performance-optimized">
+                        <h3>Orientación</h3>
+                        <p>Comunicación</p>
+                    </div>
+                </div>
+                
+                <div class="instagram-section">
+                    <h3 class="instagram-title">Seguinos en Instagram</h3>
+                    <a href="https://www.instagram.com/promo_xxv_comunicacion?igsh=MWptcnR1d3hvbXJkcg==" class="instagram-link" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i>
+                        @promo_xxv_comunicacion
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
+        <div class="footer-decoration"></div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <i class="fas fa-flag"></i>
-                    <span>Descubrí Uruguay</span>
+                    <div class="footer-logo-icon">
+                        <i class="fas fa-flag"></i>
+                        <span>Descubrí Uruguay</span>
+                    </div>
+                    <p class="footer-tagline">Explorá la belleza y cultura de este maravilloso país</p>
                 </div>
-                <p>Explorá la belleza y cultura de este maravilloso país</p>
+                
                 <div class="creditos">
-                    <p>Proyecto escolar realizado por 5to B - Fiesta de la Tradición</p>
+                    <p>Proyecto escolar desarrollado con dedicación y creatividad</p>
+                    <p class="fiesta-tradicion">Fiesta de la Tradición 2025</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Menú móvil optimizado - MEJORADO
+        // Estado global para controlar el menú
+        const appState = {
+            isMenuOpen: false,
+            isScrolled: false
+        };
+
+        // Elementos del DOM
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         const menuOverlay = document.getElementById('menuOverlay');
-        
-        function toggleMenu() {
-            const isActive = navLinks.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-            menuToggle.innerHTML = isActive 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-            
-            // Cambiar aria-label para accesibilidad
-            menuToggle.setAttribute('aria-label', 
-                isActive ? 'Cerrar menú' : 'Abrir menú');
-            
-            // Prevenir scroll del body cuando el menú está abierto
-            document.body.style.overflow = isActive ? 'hidden' : '';
-        }
-        
-        menuToggle.addEventListener('click', toggleMenu);
-        
-        // Cerrar menú al hacer clic en el overlay
-        menuOverlay.addEventListener('click', toggleMenu);
-        
-        // Cerrar menú al hacer clic en un enlace
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuOverlay.classList.remove('active');
-                menuToggle.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                menuToggle.setAttribute('aria-label', 'Abrir menú');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        // Header scroll effect mejorado
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling optimizado para móviles
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerHeight = document.getElementById('header').offsetHeight;
-                    const targetPosition = targetElement.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        const header = document.getElementById('header');
 
-        // Preload de imágenes críticas para mejor rendimiento
-        function preloadImages() {
-            const images = [
-                'img/hero-uruguay.webp',
-                'img/colonia.webp',
-                'img/punta-este.webp',
-                'img/montevideo.webp'
+        // Función optimizada para toggle del menú
+        function toggleMenu() {
+            appState.isMenuOpen = !appState.isMenuOpen;
+            
+            // Aplicar cambios visuales
+            navLinks.classList.toggle('active', appState.isMenuOpen);
+            menuOverlay.classList.toggle('active', appState.isMenuOpen);
+            menuToggle.classList.toggle('active', appState.isMenuOpen);
+            
+            // Actualizar ícono y accesibilidad
+            const icon = appState.isMenuOpen ? 'times' : 'bars';
+            const label = appState.isMenuOpen ? 'Cerrar menú' : 'Abrir menú';
+            const expanded = appState.isMenuOpen ? 'true' : 'false';
+            
+            menuToggle.innerHTML = `<i class="fas fa-${icon}"></i>`;
+            menuToggle.setAttribute('aria-label', label);
+            menuToggle.setAttribute('aria-expanded', expanded);
+            
+            // Controlar scroll del body
+            document.body.style.overflow = appState.isMenuOpen ? 'hidden' : '';
+        }
+
+        // Función para cerrar menú
+        function closeMenu() {
+            if (appState.isMenuOpen) {
+                toggleMenu();
+            }
+        }
+
+        // Inicializar eventos del menú
+        function initMenu() {
+            if (menuToggle && navLinks && menuOverlay) {
+                menuToggle.addEventListener('click', toggleMenu);
+                menuOverlay.addEventListener('click', closeMenu);
+                
+                // Cerrar menú al hacer clic en enlaces (solo móvil)
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth < 769) {
+                            closeMenu();
+                        }
+                    });
+                });
+            }
+        }
+
+        // Header scroll effect optimizado
+        function initHeaderScroll() {
+            if (header) {
+                let ticking = false;
+                
+                function updateHeader() {
+                    const scrolled = window.scrollY > 50;
+                    
+                    if (scrolled !== appState.isScrolled) {
+                        appState.isScrolled = scrolled;
+                        header.classList.toggle('scrolled', scrolled);
+                    }
+                    
+                    ticking = false;
+                }
+                
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(updateHeader);
+                        ticking = true;
+                    }
+                }, { passive: true });
+            }
+        }
+
+        // Smooth scrolling optimizado
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    // No aplicar smooth scroll para enlaces que no sean de anclaje interno
+                    if (this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = header?.offsetHeight || 0;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Preload de imágenes críticas
+        function preloadCriticalImages() {
+            const criticalImages = [
+                'img/hero-bg.webp'
             ];
             
-            images.forEach(src => {
+            criticalImages.forEach(src => {
                 const img = new Image();
                 img.src = src;
             });
         }
 
-        // Prevenir comportamiento de arrastre en imágenes (mejora UX móvil)
-        document.addEventListener('dragstart', function(e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
+        // Lazy loading para imágenes no críticas
+        function initLazyLoading() {
+            const lazyImages = document.querySelectorAll('.lugar-img');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.style.backgroundImage = img.style.backgroundImage;
+                            img.classList.add('loaded');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                    img.classList.add('loading');
+                });
+            } else {
+                // Fallback para navegadores sin IntersectionObserver
+                lazyImages.forEach(img => {
+                    img.classList.add('loaded');
+                });
             }
-        });
-
-        // Preload de imágenes después de que cargue la página principal
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', preloadImages);
-        } else {
-            preloadImages();
         }
 
-        // Mejorar rendimiento en scroll para móviles
-        let ticking = false;
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                requestAnimationFrame(function() {
-                    // Aquí se pueden agregar efectos durante el scroll si es necesario
-                    ticking = false;
-                });
-                ticking = true;
+        // Cerrar menú al cambiar tamaño de ventana a desktop
+        function handleResize() {
+            if (window.innerWidth >= 769 && appState.isMenuOpen) {
+                closeMenu();
             }
-        }, { passive: true });
+        }
+
+        // Prevenir comportamiento de arrastre en imágenes (mejora UX móvil)
+        function preventImageDrag() {
+            document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+        }
+
+        // Inicializar todas las funcionalidades
+        function init() {
+            initMenu();
+            initHeaderScroll();
+            initSmoothScrolling();
+            preloadCriticalImages();
+            initLazyLoading();
+            preventImageDrag();
+            
+            // Event listeners adicionales
+            window.addEventListener('resize', handleResize);
+            
+            // Agregar clase de carga inicial para transiciones suaves
+            window.addEventListener('load', function() {
+                document.body.classList.add('loaded');
+            });
+        }
+
+        // Iniciar la aplicación cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
     </script>
 </body>
 </html>
