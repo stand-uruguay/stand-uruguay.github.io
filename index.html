@@ -655,40 +655,6 @@
             max-width: 100%;
         }
 
-        /* Botón de volver arriba - NUEVO */
-        .back-to-top {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--celeste), var(--celeste-oscuro));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(65, 137, 221, 0.4);
-            z-index: 99;
-            cursor: pointer;
-            transition: var(--transition);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-        }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .back-to-top:active {
-            transform: scale(0.9);
-            box-shadow: 0 2px 8px rgba(65, 137, 221, 0.6);
-        }
-
         /* Mejoras para tablets pequeñas */
         @media (min-width: 481px) and (max-width: 768px) {
             .hero h1 {
@@ -869,11 +835,6 @@
         <div class="menu-overlay" id="menuOverlay"></div>
     </header>
 
-    <!-- Botón Volver Arriba -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-content">
@@ -1028,7 +989,6 @@
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         const menuOverlay = document.getElementById('menuOverlay');
-        const backToTop = document.getElementById('backToTop');
         
         function toggleMenu() {
             const isActive = navLinks.classList.toggle('active');
@@ -1071,13 +1031,6 @@
             } else {
                 header.classList.remove('scrolled');
             }
-            
-            // Mostrar/ocultar botón de volver arriba
-            if (window.scrollY > 500) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
         });
         
         // Smooth scrolling optimizado para móviles
@@ -1098,14 +1051,6 @@
                         behavior: 'smooth'
                     });
                 }
-            });
-        });
-
-        // Botón volver arriba
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
             });
         });
 
